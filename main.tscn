@@ -1,0 +1,98 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://tile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://mc.tscn" type="PackedScene" id=2]
+
+[node name="main" type="Node2D"]
+
+[node name="tile" parent="." instance=ExtResource( 1 )]
+position = Vector2( 8, 592 )
+
+[node name="tile2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 24, 592 )
+
+[node name="tile3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 40.4179, 592 )
+
+[node name="tile4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 56, 592 )
+
+[node name="tile5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 72, 592 )
+
+[node name="tile6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 88, 592 )
+
+[node name="tile7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 592 )
+
+[node name="tile8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 576 )
+
+[node name="tile9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 559.912 )
+
+[node name="tile10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 544 )
+
+[node name="tile11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 120, 528 )
+
+[node name="tile12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 136, 528 )
+
+[node name="tile13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 152, 528 )
+
+[node name="tile14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 168, 528 )
+
+[node name="tile15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 184, 528 )
+
+[node name="tile16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 200, 528 )
+
+[node name="tile17" parent="." instance=ExtResource( 1 )]
+position = Vector2( 216, 528 )
+
+[node name="tile18" parent="." instance=ExtResource( 1 )]
+position = Vector2( 216, 480 )
+
+[node name="tile19" parent="." instance=ExtResource( 1 )]
+position = Vector2( 200, 480 )
+
+[node name="tile20" parent="." instance=ExtResource( 1 )]
+position = Vector2( 184, 480 )
+
+[node name="tile21" parent="." instance=ExtResource( 1 )]
+position = Vector2( 168, 480 )
+
+[node name="tile22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 216, 376 )
+
+[node name="tile23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 200, 376 )
+
+[node name="tile24" parent="." instance=ExtResource( 1 )]
+position = Vector2( 256, 464 )
+
+[node name="tile25" parent="." instance=ExtResource( 1 )]
+position = Vector2( 272, 464 )
+
+[node name="tile26" parent="." instance=ExtResource( 1 )]
+position = Vector2( 288, 464 )
+
+[node name="mc" parent="." instance=ExtResource( 2 )]
+position = Vector2( 40.4179, 552 )
+
+[node name="Camera2D" type="Camera2D" parent="mc"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="mc"]
+rect_clip_content = false
+text = "HELLO!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
