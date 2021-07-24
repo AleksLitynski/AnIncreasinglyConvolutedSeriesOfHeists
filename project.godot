@@ -14,6 +14,12 @@ config/name="An Increasingly Convoluted Series Of Heists"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
+[importer_defaults]
+
+texture={
+"flags/filter": false
+}
+
 [input]
 
 left={

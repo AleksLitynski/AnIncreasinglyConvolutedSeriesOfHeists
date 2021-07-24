@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Super Monkey Ball 2 OST - World 8 - Clock Tower.mp3-eb4df97e09a08e14cfa70cbf8713f75f.mp3str"
+
+[deps]
+
+source_file="res://music/Super Monkey Ball 2 OST - World 8 - Clock Tower.mp3"
+dest_files=[ "res://.import/Super Monkey Ball 2 OST - World 8 - Clock Tower.mp3-eb4df97e09a08e14cfa70cbf8713f75f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
