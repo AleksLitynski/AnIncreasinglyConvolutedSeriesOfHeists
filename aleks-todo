@@ -1,0 +1,23 @@
+
+todo:
+- State transitions
+	- Main meny with (about/high score/start)
+	- have the van drive towards the cursor and rotate on the main menu
+- truck/player entrace
+- inter-stage animation (rumbling truck?)
+- gold deposit
+- UI/score tracking
+- timer
+
+
+- fixed camera
+
+- trampoline
+
+
+
+
+toredolater:
+- pick up/throw gold better animation/wind up
+- heavier gold/doesn't clip through walls
+- gold weights down the player, makes them move slower
