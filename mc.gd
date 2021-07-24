@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 enum ANIM_STATE { IDLE, WALK, JUMP, THROW, GRAB }
-enum PRESS_STATES { NONE, START, MIDDLE, END }
+enum PRESS_STATES { NONE, START, MIDDLE, RELEASE, END }
 var frame_times = {
 	ANIM_STATE.IDLE: 1.0,
 	ANIM_STATE.WALK: 0.25,
@@ -26,13 +26,15 @@ var motion: = {
 	"speed": 30,
 	"max_speed": 175,
 }
-
 var jump = {
 	"active": false,
 	"max": 50,
 	"current": 0,
 	"falloff": 0.9,
-}	
+}
+
+var gold = []
+var thrown = null
 
 func show_anim(name):
 	$sprite.texture = load("res://sprites/%s.png" % name)
@@ -58,19 +60,20 @@ func pressed_state(test, state_name):
 			anim["paused"] = true # and pause all animations
 			anim["passed_middle"] = true
 			if anim["pressed_state"] == PRESS_STATES.MIDDLE:
-				anim["pressed_state"] = PRESS_STATES.END
+				anim["pressed_state"] = PRESS_STATES.RELEASE
 				state_changed = true
 			if !test: # until we release the button
 				anim["locked"] = false # then, allow other animations and re-enable this one
 				anim["paused"] = false
 				anim["pressed_state_flags"][state_name] = true
-				anim["pressed_state"] = PRESS_STATES.NONE
+				anim["pressed_state"] = PRESS_STATES.END
+				state_changed = true
 
 	# if the animation hasn't started yet, start it and lock out other animations
 	if test and anim["pressed_state_flags"][state_name]:
 		set_anim_state(state_name)
 		anim["locked"] = true
-		if anim["pressed_state"] == PRESS_STATES.NONE:
+		if anim["pressed_state"] == PRESS_STATES.END:
 			anim["pressed_state"] = PRESS_STATES.START
 			state_changed = true
 
@@ -113,6 +116,14 @@ func animate():
 			else:
 				show_anim("mc_grab1")
 
+func move_anchors(on_left):
+	if !on_left:
+		$grabbox.transform.origin.x = 24
+		$goldanchor.transform.origin.x = -16
+	else:
+		$grabbox.transform.origin.x = -16
+		$goldanchor.transform.origin.x = 16
+
 func _process(delta):
 	if !anim["paused"]:
 		anim["time"] += delta
@@ -128,6 +139,7 @@ func _process(delta):
 
 	if lr_move != 0:
 		$sprite.flip_h = false if lr_move > 0 else true
+		move_anchors($sprite.flip_h)
 		if is_on_floor():
 			set_anim_state(ANIM_STATE.WALK)
 		motion["velocity"].x = clamp(motion["velocity"].x + (motion["speed"] * lr_move), 
@@ -154,11 +166,25 @@ func _process(delta):
 	var grab_state = pressed_state(Input.is_action_pressed("grab"), ANIM_STATE.GRAB)
 
 	if grab_state == PRESS_STATES.START:
-		print("GRAB START")
-	if grab_state == PRESS_STATES.MIDDLE:
-		print("GRAB MIDDLE")
-	if grab_state == PRESS_STATES.END:
-		print("GRAB END")
+		var bodies = $grabbox.get_overlapping_bodies()
+		for b in bodies:
+			if b.is_in_group("gold"):
+				b.set_target($goldanchor)
+				gold.push_back(b)
+				break # only pick up one per grab
+
+	if throw_state == PRESS_STATES.START:
+		if (len(gold) > 0):
+			thrown = gold.pop_back()
+			thrown.set_target($grabbox)
+			thrown.set_orbit(false)
+
+	if throw_state == PRESS_STATES.END:
+		print('end state')
+		var throw_speed = 200
+		thrown.apply_central_impulse(Vector2(-throw_speed if $sprite.flip_h else throw_speed, -100))
+		thrown.set_target()
+		thrown.set_orbit(true)
 
 	animate()
 
