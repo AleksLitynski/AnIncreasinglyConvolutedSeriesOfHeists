@@ -3,6 +3,7 @@
 [ext_resource path="res://sprites/mc_idle1.png" type="Texture" id=1]
 [ext_resource path="res://mc.gd" type="Script" id=2]
 
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
 

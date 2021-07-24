@@ -2,10 +2,10 @@
 
 [ext_resource path="res://sprites/goldbar3.png" type="Texture" id=1]
 [ext_resource path="res://mc.tscn" type="PackedScene" id=2]
-[ext_resource path="res://sprites/single_shelf.png" type="Texture" id=3]
+[ext_resource path="res://sprites/source/single_shelf.png" type="Texture" id=3]
 [ext_resource path="res://goldbar-drift.gd" type="Script" id=4]
-[ext_resource path="res://sprites/large_shelf_center.png" type="Texture" id=5]
-[ext_resource path="res://sprites/large_shelf_left.png" type="Texture" id=6]
+[ext_resource path="res://sprites/source/large_shelf_center.png" type="Texture" id=5]
+[ext_resource path="res://sprites/source/large_shelf_left.png" type="Texture" id=6]
 [ext_resource path="res://fonts/digital-7.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
