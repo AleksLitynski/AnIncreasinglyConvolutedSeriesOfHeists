@@ -12,3 +12,5 @@ func _process(delta):
 	period.y += delta * 2
 	offset.x = sin(period.x) * 2.5
 	offset.y = sin(period.y) * 2.5
+
+
