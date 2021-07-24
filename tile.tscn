@@ -3,15 +3,15 @@
 [ext_resource path="res://icon.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.9675, 31.6269 )
+extents = Vector2( 8, 8 )
 
 [node name="tile" type="StaticBody2D" groups=[
 "tile",
 ]]
+
+[node name="StaticBody2D" type="Sprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
-
-[node name="StaticBody2D" type="Sprite" parent="."]
-texture = ExtResource( 1 )

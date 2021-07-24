@@ -2,31 +2,41 @@ extends KinematicBody2D
 
 
 var velocity = Vector2()
-var jumped = false
-
-func grounded():
-	var belows = $"below-box".get_overlapping_bodies()
-	for below in belows:
-		if below.is_in_group("tile"):
-			return true
-	return false
+var gravity = 10
+var move_speed = 30
+var max_move = 175
+var jump = {
+	"active": false,
+	"max": 50,
+	"current": 0,
+	"falloff": 0.9,
+}
 
 func _process(delta):
-	velocity.y += 30
 
 	if Input.is_action_pressed("left"):
-		velocity.x = min(-500, velocity.x - 7)
+		velocity.x = max(-max_move, velocity.x - move_speed)
 	elif Input.is_action_pressed("right"):
-		velocity.x = max(500, velocity.x + 7)
+		velocity.x = min(max_move, velocity.x + move_speed)
 	else:
-		velocity.x = 0
+		velocity.x = lerp(velocity.x, 0, 0.2)
 
-	var gd = grounded()
-	if gd:
-		if Input.is_action_pressed("jump") and !jumped:
-			velocity.y -= 2100
-			jumped = true
-		if !Input.is_action_pressed("jump"):
-			jumped = false
+	if is_on_floor():
+#		$Camera2D/debug.text = 'on floor'
+		if Input.is_action_pressed("jump") and !jump["active"]:
+			jump["active"] = true
+			velocity.y -= jump["current"]
 
-	move_and_slide(velocity * delta * 10)
+	if Input.is_action_pressed("jump") and jump["active"]:
+		jump["current"] *= jump["falloff"]
+		velocity.y -= jump["current"]
+
+	if !Input.is_action_pressed("jump"):
+		jump["active"] = false
+		jump["current"] = jump["max"]
+		
+		
+	$Camera2D/debug.text = str(jump) + "\n" + str(velocity)
+
+	velocity.y += gravity
+	velocity = move_and_slide(velocity, Vector2.UP)
