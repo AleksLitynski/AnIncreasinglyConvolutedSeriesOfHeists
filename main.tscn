@@ -1,203 +1,82 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://tile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/goldbar3.png" type="Texture" id=1]
 [ext_resource path="res://mc.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://goldbar-drift.gd" type="Script" id=4]
+
+[sub_resource type="NavigationPolygon" id=2]
+vertices = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="TileSet" id=1]
+0/name = "icon.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/occluder = SubResource( 3 )
+0/navigation_offset = Vector2( 0, 0 )
+0/navigation = SubResource( 2 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 4 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=5]
 
 [node name="main" type="Node2D"]
 
-[node name="map_1" type="Node2D" parent="."]
-
-[node name="tile" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 8, 592 )
-
-[node name="tile27" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -8, 592 )
-
-[node name="tile28" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -24, 592 )
-
-[node name="tile2" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 24, 592 )
-
-[node name="tile3" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 40.4179, 592 )
-
-[node name="tile4" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 56, 592 )
-
-[node name="tile5" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 72, 592 )
-
-[node name="tile6" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 88, 592 )
-
-[node name="tile7" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 104, 592 )
-
-[node name="tile29" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -136, 592 )
-
-[node name="tile30" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -152, 592 )
-
-[node name="tile31" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -168, 592 )
-
-[node name="tile32" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -120, 592 )
-
-[node name="tile33" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -103.582, 592 )
-
-[node name="tile34" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -88, 592 )
-
-[node name="tile35" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -72, 592 )
-
-[node name="tile36" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -56, 592 )
-
-[node name="tile37" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -40, 592 )
-
-[node name="tile38" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -280, 592 )
-
-[node name="tile39" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -296, 592 )
-
-[node name="tile40" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -312, 592 )
-
-[node name="tile41" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -264, 592 )
-
-[node name="tile42" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -247.582, 592 )
-
-[node name="tile43" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -232, 592 )
-
-[node name="tile44" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -216, 592 )
-
-[node name="tile45" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -200, 592 )
-
-[node name="tile46" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -184, 592 )
-
-[node name="tile47" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -424, 592 )
-
-[node name="tile48" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -440, 592 )
-
-[node name="tile49" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -456, 592 )
-
-[node name="tile50" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -408, 592 )
-
-[node name="tile51" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -391.582, 592 )
-
-[node name="tile52" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -376, 592 )
-
-[node name="tile53" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -360, 592 )
-
-[node name="tile54" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -344, 592 )
-
-[node name="tile55" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -328, 592 )
-
-[node name="tile8" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 104, 576 )
-
-[node name="tile9" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 104, 559.912 )
-
-[node name="tile10" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 104, 544 )
-
-[node name="tile56" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -472, 592 )
-
-[node name="tile57" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -472, 576 )
-
-[node name="tile58" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -472, 559.912 )
-
-[node name="tile59" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( -472, 544 )
-
-[node name="tile11" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 120, 528 )
-
-[node name="tile12" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 136, 528 )
-
-[node name="tile13" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 152, 528 )
-
-[node name="tile14" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 168, 528 )
-
-[node name="tile15" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 184, 528 )
-
-[node name="tile16" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 200, 528 )
-
-[node name="tile17" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 216, 528 )
-
-[node name="tile18" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 216, 480 )
-
-[node name="tile19" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 200, 480 )
-
-[node name="tile20" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 184, 480 )
-
-[node name="tile21" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 168, 480 )
-
-[node name="tile22" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 216, 376 )
-
-[node name="tile23" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 200, 376 )
-
-[node name="tile24" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 256, 464 )
-
-[node name="tile25" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 272, 464 )
-
-[node name="tile26" parent="map_1" instance=ExtResource( 1 )]
-position = Vector2( 288, 464 )
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
+tile_set = SubResource( 1 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0 )
 
 [node name="mc" parent="." instance=ExtResource( 2 )]
-position = Vector2( 40.4179, 552 )
+position = Vector2( 56, -48 )
 
 [node name="Camera2D" type="Camera2D" parent="mc"]
 current = true
-zoom = Vector2( 0.2, 0.2 )
+zoom = Vector2( 0.5, 0.5 )
 
 [node name="debug" type="RichTextLabel" parent="mc/Camera2D"]
-margin_left = -96.4179
-margin_top = -56.0
-margin_right = 35.5821
-margin_bottom = 37.0
+margin_left = -248.0
+margin_top = -144.0
+margin_right = 248.0
+margin_bottom = 144.0
 rect_clip_content = false
 text = "HELLO!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="gold" type="RigidBody2D" parent="."]
+position = Vector2( 152, -152 )
+mass = 4.0
+
+[node name="goldbar" type="Sprite" parent="gold"]
+texture = ExtResource( 1 )
+offset = Vector2( -1, 0 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gold"]
+shape = SubResource( 5 )
