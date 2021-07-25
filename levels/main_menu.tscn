@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://themes/title_theme.tres" type="Theme" id=1]
+[ext_resource path="res://sprites/goldbar3.png" type="Texture" id=2]
+[ext_resource path="res://Car.tscn" type="PackedScene" id=3]
+[ext_resource path="res://main_menu_car.gd" type="Script" id=5]
+[ext_resource path="res://main_menu.gd" type="Script" id=6]
+
+[node name="main_menu" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 88.0
+margin_top = 328.0
+margin_right = 936.0
+margin_bottom = 496.0
+theme = ExtResource( 1 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.933333, 0.772549, 0.211765, 1 )
+text = "hit the bank"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="goldbar3" type="Sprite" parent="."]
+position = Vector2( 220, 140 )
+scale = Vector2( 15.5, 15.5 )
+texture = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 344.0
+margin_top = 88.0
+margin_right = 912.0
+margin_bottom = 232.0
+rect_pivot_offset = Vector2( 388, 140 )
+theme = ExtResource( 1 )
+custom_colors/default_color = Color( 0.921569, 0.737255, 0.0901961, 1 )
+text = "AU Voleur"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Car" parent="." instance=ExtResource( 3 )]
+position = Vector2( -160, 200 )
+scale = Vector2( 1.375, 1.375 )
+frame = 1
+script = ExtResource( 5 )

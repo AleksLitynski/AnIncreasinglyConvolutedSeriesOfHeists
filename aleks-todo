@@ -1,0 +1,21 @@
+todo day 2:
+- gold score + timer
+- lose screen
+- score on inter-stage screen + in game
+- loop levels
+- put gold into van to score points
+- win animation (truck backs out)
+
+- item mechanics
+  - trampoline
+  - door
+  - zipline
+
+
+
+to-improve:
+- pick up/throw gold better animation/wind up
+- heavier gold/doesn't clip through walls
+- gold weights down the player, makes them move slower
+- fixed camera
+
