@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 enum ANIM_STATE { IDLE, WALK, JUMP, THROW, GRAB }
 enum PRESS_STATES { NONE, START, MIDDLE, RELEASE, END }
+
+var sleep_all = false
+
 var frame_times = {
 	ANIM_STATE.IDLE: 1.0,
 	ANIM_STATE.WALK: 0.25,
@@ -125,6 +128,9 @@ func move_anchors(on_left):
 		$goldanchor.transform.origin.x = 16
 
 func _process(delta):
+	if sleep_all:
+		return
+
 	if !anim["paused"]:
 		anim["time"] += delta
 	set_anim_state(ANIM_STATE.IDLE)
@@ -187,14 +193,14 @@ func _process(delta):
 
 	animate()
 
-	$Camera2D/debug.text = str(motion["velocity"]) \
-		+ "\n" + str(anim["state"]) \
-		+ "\n throw_state:" + str(throw_state) \
-		+ "\n grab_state:" + str(grab_state) \
-		+ "\n anim_time:" + str(anim["time"]) \
-		+ "\n state_start_time:" + str(anim["start_time"]) \
-		+ "\n frame_times[anim_state]:" + str(frame_times[anim["state"]]) \
-		+ "\n anim_done:" + str(anim["time"] - anim["start_time"] > frame_times[anim["state"]]) \
+#	$Camera2D/debug.text = str(motion["velocity"]) \
+#		+ "\n" + str(anim["state"]) \
+#		+ "\n throw_state:" + str(throw_state) \
+#		+ "\n grab_state:" + str(grab_state) \
+#		+ "\n anim_time:" + str(anim["time"]) \
+#		+ "\n state_start_time:" + str(anim["start_time"]) \
+#		+ "\n frame_times[anim_state]:" + str(frame_times[anim["state"]]) \
+#		+ "\n anim_done:" + str(anim["time"] - anim["start_time"] > frame_times[anim["state"]]) \
 
 	motion["velocity"].y += motion["gravity"]
 	motion["velocity"] = move_and_slide(motion["velocity"], Vector2.UP)

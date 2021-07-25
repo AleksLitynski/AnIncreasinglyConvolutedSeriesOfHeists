@@ -2,6 +2,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# load_level("main_menu", false)
 	load_level("main_menu", false)
 
 var current_level = null
