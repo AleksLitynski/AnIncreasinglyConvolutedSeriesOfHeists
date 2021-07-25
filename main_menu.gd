@@ -23,4 +23,4 @@ func _on_play_pressed():
 		$Car.do_final_anim()
 
 func _on_help_pressed():
-	pass # Replace with function body.
+	get_tree().get_nodes_in_group("main")[0].load_level("help", false)
