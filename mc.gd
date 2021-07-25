@@ -32,12 +32,13 @@ var motion: = {
 }
 var jump = {
 	"active": false,
-	"max": 50,
+	"max": 55,
 	"current": 0,
 	"falloff": 0.9,
 }
 
 var gold = []
+var max_gold_weight = 14.0
 var thrown = null
 var default_throw_velocity = Vector2(15, -10)
 var throw_time = 0
@@ -139,6 +140,11 @@ func move_anchors(on_left):
 		$goldanchor.transform.origin.x = 16
 		$throwanchor.transform.origin.x = -30
 
+func encumberment_dampener(jump):
+	if jump:
+		return 1 - (len(gold) / (max_gold_weight * 2))
+	return 1 - (len(gold) / max_gold_weight)
+
 func _process(delta):
 	if sleep_all:
 		return
@@ -168,16 +174,16 @@ func _process(delta):
 			set_anim_state(ANIM_STATE.WALK)
 		motion["velocity"].x = clamp(motion["velocity"].x + (motion["speed"] * lr_move), 
 			-motion["max_speed"],
-			motion["max_speed"])
+			motion["max_speed"]) * encumberment_dampener(false)
 
 	if is_on_floor():
 		if Input.is_action_pressed("jump") and !jump["active"]:
 			jump["active"] = true
-			motion["velocity"].y -= jump["current"]
+			motion["velocity"].y -= jump["current"] * encumberment_dampener(true)
 
 	if Input.is_action_pressed("jump") and jump["active"]:
 		jump["current"] *= jump["falloff"]
-		motion["velocity"].y -= stepify(jump["current"], 0.1)
+		motion["velocity"].y -= stepify(jump["current"], 0.1) * encumberment_dampener(true)
 
 	if !Input.is_action_pressed("jump"):
 		jump["active"] = false
