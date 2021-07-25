@@ -134,11 +134,11 @@ func move_anchors(on_left):
 	if !on_left:
 		$grabbox.transform.origin.x = 24
 		$goldanchor.transform.origin.x = -16
-		$throwanchor.transform.origin.x = 30
+		$throwanchor.transform.origin.x = 20
 	else:
 		$grabbox.transform.origin.x = -16
 		$goldanchor.transform.origin.x = 16
-		$throwanchor.transform.origin.x = -30
+		$throwanchor.transform.origin.x = -20
 
 func encumberment_dampener(jump):
 	if jump:
@@ -200,6 +200,7 @@ func _process(delta):
 		for b in bodies:
 			if b.is_in_group("gold"):
 				b.set_target($goldanchor)
+				b.disable_collisions_for(self)
 				gold.push_back(b)
 				break # only pick up one per grab
 
@@ -217,14 +218,12 @@ func _process(delta):
 	
 	if throw_state == PRESS_STATES.END and thrown != null:
 		# clear all physics on the gold bar
-		thrown.global_transform.origin = $throwanchor.global_transform.origin
-		thrown.rotation = 0
 		thrown.set_target()
 		thrown.set_linear_velocity(Vector2(0, 0))
 		thrown.set_angular_velocity(0)
 		thrown.set_orbit(true)
 		
-		thrown.disable_collisions_for_time(self, 1.0)
+		thrown.enable_collisions_in(1.0)
 		
 		var velo = default_throw_velocity
 		var force = Vector2(-velo.x if $sprite.flip_h else velo.x, velo.y) * \

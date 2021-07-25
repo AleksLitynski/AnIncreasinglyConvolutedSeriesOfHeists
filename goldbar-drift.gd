@@ -27,14 +27,12 @@ func _process(delta):
 	if orbit:
 		$goldbar.offset.x = sin(period.x) * orbit_radius
 		$goldbar.offset.y = sin(period.y) * orbit_radius
-	else:
-		$goldbar.offset.x = lerp($goldbar.offset.x, 0, 0.1)
-		$goldbar.offset.y = lerp($goldbar.offset.y, 0, 0.1)
-		rotation = lerp(rotation, 0, 0.1)
 	
 	if target != null:
 		var t = target.get_global_transform().origin - get_global_transform().origin
-		transform.origin += t * 10 * delta
+		#	apply_central_impulse()
+		set_linear_velocity(t * 10 * delta * 150)
+#		transform.origin += 
 	else:
 		# slowly rotate the gold so it faces up once it lands on the ground
 		if fmod(rotation, PI * 2) > 0.2:
@@ -42,40 +40,40 @@ func _process(delta):
 			rotation += delta * rot_speed
 		else:
 			rotation = 0
-	
-	
 
 func set_orbit(orb = true):
 	orbit = orb
+	rotation = 0
 
 func set_target(t = null):
 	if t != null:
 		orbit_radius = 7.5
 		orbit_speed = 1.5
-		sleeping = true
-		collision_mask = 2
-		collision_layer = 2
 	else:
 		orbit_radius = 2.5
 		orbit_speed = 1
-		collision_mask = 1
-		collision_layer = 1
 	target = t
 
 func fade_out(target):
 	fade_out = target
-	
+
 var col_exception = null
 var timer = null
-
-func disable_collisions_for_time(target, time_to_unset):
+func disable_collisions_for(target):
 	col_exception = target
 	add_collision_exception_with(col_exception)
+	for gold in get_tree().get_nodes_in_group("gold"):
+		add_collision_exception_with(gold)
+		
+	
+func enable_collisions_in(time):
 	timer = Timer.new()
 	timer.connect("timeout", self, "unset_done")
 	add_child(timer)
-	timer.start(time_to_unset)
+	timer.start(time)
 
 func unset_done():
 	remove_collision_exception_with(col_exception)
+	for gold in get_tree().get_nodes_in_group("gold"):
+		remove_collision_exception_with(gold)
 	remove_child(timer)
