@@ -3,12 +3,18 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# load_level("main_menu", false)
-	load_level("level_2", false)
+	load_level("main_menu", false)
 
 var current_level = null
 var stats = null
 var level_running = false
 var levels_won = 0
+var total_gold_stolen = 0
+var final_stats = {
+	"levels_won": 0,
+	"total_gold_stolen": 0,
+	"prison_term": 0,
+}
 var level_sequence = [
 	"level_1",
 	"level_2",
@@ -38,6 +44,18 @@ func render_stats():
 
 func load_level(name, use_loader = true):
 	level_running = false
+	lose_state = null
+	lose_wait = 1.5
+	if bars:
+		bars.queue_free()
+		bars = null
+	
+	if name == "main_menu":
+		final_stats = {
+			"levels_won": 0,
+			"total_gold_stolen": 0,
+			"prison_term": 0,
+		}
 
 	# delete old level
 	if current_level:
@@ -55,6 +73,26 @@ func load_level(name, use_loader = true):
 		add_child(current_level)
 
 func _process(delta):
+	match lose_state:
+		"bars_up":
+			if bars.transform.origin.y <= -147:
+				lose_state = "door_close"
+				bars.transform.origin.y = -147
+			else:
+				bars.transform.origin.y -= delta * 350
+		"door_close":
+			if bars.get_node("gameover_door").transform.origin.x >= 512:
+				lose_state = "lose_anim_done"
+				bars.get_node("gameover_door").transform.origin.x = 512
+			else:
+				bars.get_node("gameover_door").transform.origin.x += delta * 650
+		"lose_anim_done":
+			if lose_wait > 0:
+				lose_wait -= delta
+			else:
+				load_level("game_over", false)
+
+
 	if stats:
 		stats["time"] -= delta
 		render_stats()
@@ -66,10 +104,12 @@ func _process(delta):
 			return
 	else:
 		clear_text()
+	
 
 func add_gold():
 	if stats:
 		stats["gold"] += 1
+		total_gold_stolen += 1
 
 func start_level():
 	stats = {
@@ -77,15 +117,35 @@ func start_level():
 		"max_gold": len(get_tree().get_nodes_in_group("gold")),
 		"time": 60
 	}
+	
+func calc_final_stats():
+	final_stats["levels_won"] = levels_won
+	final_stats["total_gold_stolen"] = total_gold_stolen
+	final_stats["prison_term"] = (levels_won * 10) + (5 if stats["gold"] > 0 else 0)
 
+var lose_state = null
+var bars = null
+var lose_wait = 1.5
 func lose_level():
-	# show jail bars
-	# go to lose screen
-	print("lost level")
+	bars = preload("res://bars.tscn").instance()
+	bars.scale = Vector2(0.5, 0.5)
+	get_tree() \
+		.get_nodes_in_group("overlay_text")[0] \
+		.get_parent() \
+		.add_child(bars)
+#	bars.transform.origin.y = 616
+	bars.transform.origin.y = 300
+	bars.transform.origin.x = -256
+	bars.z_index = 102
+	
+	lose_state = "bars_up"
+	calc_final_stats()
 	levels_won = 0
+	total_gold_stolen = 0
 	stats = null
 
 func win_level():
-	levels_won += 1
-	current_level.win_level()
-	stats = null
+	if lose_state == null:
+		levels_won += 1
+		current_level.win_level()
+		stats = null

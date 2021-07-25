@@ -207,7 +207,7 @@ func _process(delta):
 			throw_charge_meter.value = 0
 
 	var time_held = min(OS.get_system_time_msecs() - throw_time, 3_000.0)
-	throw_charge_meter.value = (time_held / 3_000) * 100
+	throw_charge_meter.value = round((time_held / 3_000) * 10) * 10
 	
 	if throw_state == PRESS_STATES.END and thrown != null:
 		# clear all physics on the gold bar

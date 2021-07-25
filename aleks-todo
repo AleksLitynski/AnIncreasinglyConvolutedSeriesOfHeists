@@ -1,8 +1,5 @@
 todo day 2:
-- lose screen
-- sounds
-- background images
-- particle effects
+
 
 
 - item mechanics
@@ -14,12 +11,18 @@ todo day 2:
 
  
  - make levels
+ 
+ 
+ - sounds
+- background images
+- particle effects
 
 
 to-improve:
 - gold weights down the player, makes them move slower
 
 
-
 Bonus:
 - fix camera (maybe)
+
+
