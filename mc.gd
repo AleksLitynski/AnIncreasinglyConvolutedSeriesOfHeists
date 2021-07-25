@@ -179,8 +179,7 @@ func _process(delta):
 			thrown.set_target($grabbox)
 			thrown.set_orbit(false)
 
-	if throw_state == PRESS_STATES.END:
-		print('end state')
+	if throw_state == PRESS_STATES.END and thrown != null:
 		var throw_speed = 200
 		thrown.apply_central_impulse(Vector2(-throw_speed if $sprite.flip_h else throw_speed, -100))
 		thrown.set_target()
