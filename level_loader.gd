@@ -2,6 +2,7 @@ extends Node2D
 
 func _ready():
 	$Button.connect("pressed", self, "pressed")
+	$Score.bbcode_text = "Levels Completed: [u]" + str(get_tree().get_nodes_in_group("main")[0].levels_won) + "[/u]"
 
 var state = "enter" # enter, exit
 var level = null
@@ -30,3 +31,4 @@ func pressed():
 func swap_to_level():
 	get_parent().add_child(level)
 	get_parent().remove_child(self)
+	

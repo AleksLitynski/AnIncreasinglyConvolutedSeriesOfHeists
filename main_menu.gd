@@ -11,4 +11,4 @@ func start_clicked():
 		$Car.do_final_anim()
 
 func anim_done():
-	get_tree().get_root().get_node("main").load_level("level_1")
+	get_tree().get_nodes_in_group("main")[0].load_level("level_1")

@@ -30,12 +30,12 @@ texture = ExtResource( 2 )
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 344.0
 margin_top = 88.0
-margin_right = 912.0
+margin_right = 960.0
 margin_bottom = 232.0
 rect_pivot_offset = Vector2( 388, 140 )
 theme = ExtResource( 1 )
 custom_colors/default_color = Color( 0.921569, 0.737255, 0.0901961, 1 )
-text = "AU Voleur"
+text = "Au Banque"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -43,5 +43,5 @@ __meta__ = {
 [node name="Car" parent="." instance=ExtResource( 3 )]
 position = Vector2( -160, 200 )
 scale = Vector2( 1.375, 1.375 )
-frame = 1
+frame = 0
 script = ExtResource( 5 )

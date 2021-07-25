@@ -45,9 +45,9 @@ __meta__ = {
 
 [node name="Target_Text" type="RichTextLabel" parent="."]
 margin_left = 512.0
-margin_top = 16.0
+margin_top = 64.0
 margin_right = 1008.0
-margin_bottom = 360.0
+margin_bottom = 368.0
 rect_pivot_offset = Vector2( 344, 80 )
 theme = SubResource( 2 )
 bbcode_enabled = true
@@ -58,9 +58,9 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 600.0
+margin_left = 568.0
 margin_top = 400.0
-margin_right = 904.0
+margin_right = 872.0
 margin_bottom = 544.0
 theme = ExtResource( 5 )
 custom_colors/font_color = Color( 0.764706, 0.682353, 0.145098, 1 )
@@ -69,5 +69,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Score" type="RichTextLabel" parent="."]
+margin_left = 512.0
+margin_top = 16.0
+margin_right = 984.0
+margin_bottom = 56.0
+rect_pivot_offset = Vector2( 344, 80 )
+theme = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[u]Levels Completed: 0[/u]"
+text = "Levels Completed: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Car" parent="." instance=ExtResource( 2 )]
-frame = 1
