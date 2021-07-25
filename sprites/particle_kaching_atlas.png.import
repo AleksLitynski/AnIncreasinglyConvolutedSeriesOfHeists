@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mc_van2.png-d2b52cd767f5fa3bc079bfb037472410.stex"
+path="res://.import/particle_kaching_atlas.png-1e63a933fc05942973aba81e17cb296e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/source/mc_van2.png"
-dest_files=[ "res://.import/mc_van2.png-d2b52cd767f5fa3bc079bfb037472410.stex" ]
+source_file="res://sprites/particle_kaching_atlas.png"
+dest_files=[ "res://.import/particle_kaching_atlas.png-1e63a933fc05942973aba81e17cb296e.stex" ]
 
 [params]
 

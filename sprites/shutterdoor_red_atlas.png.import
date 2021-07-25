@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mc_van2.png-d2b52cd767f5fa3bc079bfb037472410.stex"
+path="res://.import/shutterdoor_red_atlas.png-f1678ecf991d19906b27a928e8f26811.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/source/mc_van2.png"
-dest_files=[ "res://.import/mc_van2.png-d2b52cd767f5fa3bc079bfb037472410.stex" ]
+source_file="res://sprites/shutterdoor_red_atlas.png"
+dest_files=[ "res://.import/shutterdoor_red_atlas.png-f1678ecf991d19906b27a928e8f26811.stex" ]
 
 [params]
 

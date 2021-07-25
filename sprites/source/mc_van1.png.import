@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mc_van1.png-d9efdc34b6817dc6798cfbed2feafa76.stex"
+path="res://.import/mc_van1.png-917573a0d25dc65ede1012bf3ad9eecb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/mc_van1.png"
-dest_files=[ "res://.import/mc_van1.png-d9efdc34b6817dc6798cfbed2feafa76.stex" ]
+source_file="res://sprites/source/mc_van1.png"
+dest_files=[ "res://.import/mc_van1.png-917573a0d25dc65ede1012bf3ad9eecb.stex" ]
 
 [params]
 
