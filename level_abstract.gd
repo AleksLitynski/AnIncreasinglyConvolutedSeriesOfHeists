@@ -4,15 +4,26 @@ var state = "drive_in" # drive_in, follow_cam, crash_out, playing, lose, win
 
 onready var van = preload("res://Car.tscn").instance()
 onready var player = preload("res://mc.tscn").instance()
+onready var clock = preload("res://clock.tscn").instance()
+onready var golds = Node2D.new()
 
 func _ready():
 	add_child(van)
+	get_tree().get_nodes_in_group("camera")[0].add_child(clock)
+	get_tree().get_nodes_in_group("camera")[0].add_child(golds)
 	van.scale = Vector2(0.8, 0.8)
 	$Camera.zoom = Vector2(0.5, 0.5)
 	van.transform.origin = $end.transform.origin
 	$Camera.transform.origin = $end.transform.origin
 	$Camera.transform.origin.x -= 750
 	van.transform.origin.x -= 1400
+
+	clock.transform.origin.x = 225
+	clock.transform.origin.y = -115
+	clock.scale = Vector2(0.8, 0.8)
+	
+	clock.transform.origin.x = -225
+	clock.transform.origin.y = -115
 
 func _process(delta):
 	match state:
@@ -43,6 +54,8 @@ func _process(delta):
 			if fmod(player.get_node("sprite").rotation, (2 * PI)) < 0.4:
 				player.get_node("sprite").rotation = 0
 				state = "playing"
+				clock.frame = 0
+				clock.play("default")
 				player.sleep_all = false
 				get_tree().get_nodes_in_group("main")[0].start_level()
 			else:
@@ -67,8 +80,14 @@ func _process(delta):
 			if van.transform.origin.x < get_viewport().size.x + 200:
 				van.transform.origin.x += delta * 900
 			else:
+				player.collision_layer = 2
+				player.collision_mask = 2
+				player.sleep_all = false
 				get_tree().get_nodes_in_group("main")[0].goto_next_level()
 
 func win_level():
+	player.sleep_all = true
 	player.show_anim("mc_jump")
+	player.collision_layer = 2
+	player.collision_mask = 2
 	state = "win_jump_car"

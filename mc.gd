@@ -46,10 +46,10 @@ var throw_charge_meter = preload("res://charge_level.tscn").instance()
 var throw_charge_meter_target_y = 120
 
 func _ready():
-	get_tree().get_nodes_in_group("overlay_text")[0].get_parent().add_child(throw_charge_meter)
+	get_tree().get_nodes_in_group("camera")[0].add_child(throw_charge_meter)
 	throw_charge_meter.rect_position = Vector2(-64, 150)
 	throw_charge_meter_target_y = 150
-	get_tree().get_nodes_in_group("overlay_text")[0].get_parent().z_index = 101
+	get_tree().get_nodes_in_group("camera")[0].z_index = 101
 
 func show_anim(name):
 	$sprite.texture = load("res://sprites/%s.png" % name)

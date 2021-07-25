@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://level_2.gd" type="Script" id=2]
 [ext_resource path="res://gold.tscn" type="PackedScene" id=3]
-[ext_resource path="res://themes/text_theme.tres" type="Theme" id=4]
 
 [node name="level_2" type="Node2D"]
 position = Vector2( 159, -16 )
@@ -56,19 +55,7 @@ position = Vector2( -327, -8 )
 [node name="end" type="Node2D" parent="."]
 position = Vector2( -191, 144 )
 
-[node name="Camera" type="Camera2D" parent="."]
-current = true
-
-[node name="debug" type="RichTextLabel" parent="Camera" groups=[
-"overlay_text",
+[node name="Camera" type="Camera2D" parent="." groups=[
+"camera",
 ]]
-margin_left = -248.0
-margin_top = -144.0
-margin_right = 248.0
-margin_bottom = 144.0
-rect_clip_content = false
-theme = ExtResource( 4 )
-custom_colors/default_color = Color( 0.215686, 0.713726, 0.0784314, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+current = true

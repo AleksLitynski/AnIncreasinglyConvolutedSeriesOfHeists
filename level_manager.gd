@@ -28,20 +28,6 @@ func goto_next_level():
 		return
 	load_level(level_sequence[n_lvl_idx])
 
-func clear_text():
-	var overlays = get_tree().get_nodes_in_group("overlay_text")
-	if len(overlays) > 0:
-		var text = overlays[0]
-		text.text = ""
-
-func render_stats():
-	var text = get_tree().get_nodes_in_group("overlay_text")[0]
-	text.text = "Gold: {gold}/{max_gold}\nTime: {time}".format({
-		"gold": stats["gold"],
-		"max_gold": stats["max_gold"],
-		"time": round(stats["time"])
-	})
-
 func load_level(name, use_loader = true):
 	level_running = false
 	lose_state = null
@@ -95,16 +81,12 @@ func _process(delta):
 
 	if stats:
 		stats["time"] -= delta
-		render_stats()
 		if stats["time"] <= 0:
 			lose_level()
 			return
 		if stats["gold"] == stats["max_gold"]:
 			win_level()
 			return
-	else:
-		clear_text()
-	
 
 func add_gold():
 	if stats:
@@ -130,8 +112,7 @@ func lose_level():
 	bars = preload("res://bars.tscn").instance()
 	bars.scale = Vector2(0.5, 0.5)
 	get_tree() \
-		.get_nodes_in_group("overlay_text")[0] \
-		.get_parent() \
+		.get_nodes_in_group("camera")[0] \
 		.add_child(bars)
 #	bars.transform.origin.y = 616
 	bars.transform.origin.y = 300
