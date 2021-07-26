@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Mechanical-switch-sound-effect.wav-cb122d31370588acc9632da400e0b530.sample"
+
+[deps]
+
+source_file="res://sounds/Mechanical-switch-sound-effect.wav"
+dest_files=[ "res://.import/Mechanical-switch-sound-effect.wav-cb122d31370588acc9632da400e0b530.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
