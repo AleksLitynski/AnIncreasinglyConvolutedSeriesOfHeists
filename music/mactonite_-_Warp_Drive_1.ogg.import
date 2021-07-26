@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mactonite_-_Warp_Drive_1.ogg-a8dfecf6d69a46753778b1216f4518d4.oggstr"
+
+[deps]
+
+source_file="res://music/mactonite_-_Warp_Drive_1.ogg"
+dest_files=[ "res://.import/mactonite_-_Warp_Drive_1.ogg-a8dfecf6d69a46753778b1216f4518d4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

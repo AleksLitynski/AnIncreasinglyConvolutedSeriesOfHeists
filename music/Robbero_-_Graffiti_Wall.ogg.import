@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Robbero_-_Graffiti_Wall.ogg-03f3828f41b40bdf1fa13e08cc477031.oggstr"
+
+[deps]
+
+source_file="res://music/Robbero_-_Graffiti_Wall.ogg"
+dest_files=[ "res://.import/Robbero_-_Graffiti_Wall.ogg-03f3828f41b40bdf1fa13e08cc477031.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

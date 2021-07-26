@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Whitewolf225_-_Peace_Love_Hippieness_1.ogg-b5f7efd7929de9feee3721175301a173.oggstr"
+
+[deps]
+
+source_file="res://music/Whitewolf225_-_Peace_Love_Hippieness_1.ogg"
+dest_files=[ "res://.import/Whitewolf225_-_Peace_Love_Hippieness_1.ogg-b5f7efd7929de9feee3721175301a173.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
