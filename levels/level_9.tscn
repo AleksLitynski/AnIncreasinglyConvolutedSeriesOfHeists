@@ -1,0 +1,113 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://level_9.gd" type="Script" id=2]
+[ext_resource path="res://gold.tscn" type="PackedScene" id=3]
+[ext_resource path="res://crate_large.tscn" type="PackedScene" id=4]
+[ext_resource path="res://trampoline.tscn" type="PackedScene" id=5]
+[ext_resource path="res://single_shelf.tscn" type="PackedScene" id=6]
+
+[node name="level_9" type="Node2D"]
+position = Vector2( 159, -16 )
+script = ExtResource( 2 )
+
+[node name="background" type="TileMap" parent="."]
+position = Vector2( -159, 16 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -458740, 8, 65538, -65542, 9, 65536, -65541, 9, 65537, -65540, 9, 65537, -65539, 9, 65537, -65538, 9, 65537, -65537, 9, 65538, -131068, 9, 65536, -131067, 9, 65537, -131066, 9, 65537, -131065, 9, 65537, -131064, 9, 65537, -131063, 9, 65537, -131062, 9, 65538, -6, 9, 131072, -5, 46, 1, -4, 46, 3, -3, 46, 1, -2, 46, 3, -1, 9, 131074, -65532, 9, 131072, -65531, 46, 1, -65530, 46, 3, -65529, 9, 131073, -65528, 46, 1, -65527, 46, 3, -65526, 9, 131074, 65530, 9, 131072, 65531, 46, 65537, 65532, 46, 65539, 65533, 46, 65537, 65534, 46, 65539, 65535, 9, 131074, 4, 9, 131072, 5, 46, 65537, 6, 46, 65539, 7, 9, 131073, 8, 46, 65537, 9, 46, 65539, 10, 9, 131074, 131066, 9, 131072, 131067, 46, 131073, 131068, 46, 131075, 131069, 46, 131073, 131070, 46, 131075, 131071, 9, 0, 65536, 9, 65537, 65537, 9, 65537, 65538, 9, 65537, 65539, 9, 65537, 65540, 9, 1, 65541, 46, 131073, 65542, 46, 131075, 65543, 9, 131073, 65544, 46, 131073, 65545, 46, 131075, 65546, 9, 131074, 196602, 9, 131072, 196603, 46, 1, 196604, 46, 3, 196605, 46, 1, 196606, 46, 3, 196607, 9, 131073, 131072, 46, 1, 131073, 46, 3, 131074, 46, 1, 131075, 46, 3, 131076, 9, 131073, 131077, 9, 2, 131078, 9, 196609, 131079, 9, 196609, 131080, 9, 196609, 131081, 9, 196609, 131082, 9, 196610, 262138, 9, 131072, 262139, 46, 65537, 262140, 46, 65539, 262141, 46, 65537, 262142, 46, 65539, 262143, 9, 131073, 196608, 46, 65537, 196609, 46, 65539, 196610, 46, 65537, 196611, 46, 65539, 196612, 9, 131073, 196613, 9, 131074, 327674, 9, 131072, 327675, 46, 131073, 327676, 46, 131075, 327677, 46, 131073, 327678, 46, 131075, 327679, 9, 131073, 262144, 46, 131073, 262145, 46, 131075, 262146, 46, 131073, 262147, 46, 131075, 262148, 9, 131073, 262149, 9, 131074, 393210, 9, 196608, 393211, 9, 196609, 393212, 9, 196609, 393213, 9, 196609, 393214, 9, 196609, 393215, 9, 196609, 327680, 9, 196609, 327681, 9, 196609, 327682, 9, 196609, 327683, 9, 196609, 327684, 9, 196609, 327685, 9, 196610 )
+
+[node name="foreground" type="TileMap" parent="."]
+position = Vector2( -159, 16 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -131079, 8, 65537, -131078, 8, 2, -131077, 8, 131075, -131076, 8, 3, -131075, 8, 2, -131074, 8, 131075, -131073, 8, 3, -196608, 8, 65538, -196605, 8, 65537, -196604, 8, 2, -196603, 8, 131075, -196602, 8, 3, -196601, 8, 2, -196600, 8, 131075, -196599, 8, 131075, -196598, 8, 3, -196597, 8, 65538, -65543, 8, 65536, -131072, 8, 65539, -131069, 8, 65536, -131061, 8, 65539, -7, 8, 65536, -65536, 8, 65539, -65533, 8, 65536, -65525, 8, 65539, 65529, 8, 65536, 0, 8, 0, 1, 8, 131075, 2, 8, 131075, 3, 8, 1, 11, 8, 65539, 131065, 8, 65536, 65543, 47, 0, 65547, 8, 65539, 196601, 8, 65536, 131083, 8, 65539, 262137, 8, 65536, 196614, 7, 65539, 196615, 7, 0, 196616, 7, 0, 196617, 7, 0, 196618, 7, 0, 196619, 7, 65538, 327673, 8, 65536, 262150, 8, 65539, 393209, 8, 65536, 327686, 8, 65539, 458745, 7, 65537, 458746, 7, 0, 458747, 7, 0, 458748, 7, 0, 458749, 7, 0, 458750, 7, 0, 458751, 7, 0, 393216, 7, 0, 393217, 7, 0, 393218, 7, 0, 393219, 7, 0, 393220, 7, 0, 393221, 7, 0, 393222, 7, 65538 )
+
+[node name="crate3" parent="." instance=ExtResource( 5 )]
+position = Vector2( -130.4, 198.691 )
+
+[node name="items" type="Node2D" parent="."]
+
+[node name="gold5" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 103.998, 104.886 )
+
+[node name="gold6" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 63.0061, 105.24 )
+
+[node name="gold7" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 124.366, 80.2406 )
+
+[node name="gold8" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 116.366, 92.4202 )
+
+[node name="gold10" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 175.299, 92.4202 )
+
+[node name="gold9" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 162.808, 104.886 )
+
+[node name="gold11" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 84.3636, 104.886 )
+
+[node name="gold12" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 167.299, 79.8867 )
+
+[node name="gold13" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 183.299, 104.886 )
+
+[node name="gold14" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 73.6136, 92.4202 )
+
+[node name="gold15" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 144.739, 79.8867 )
+
+[node name="gold16" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 136.739, 92.7741 )
+
+[node name="gold17" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 154.926, 92.4202 )
+
+[node name="gold18" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 154.808, 66.6338 )
+
+[node name="gold19" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 84.2456, 79.8867 )
+
+[node name="gold20" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 103.998, 80.2406 )
+
+[node name="gold21" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 95.998, 92.4202 )
+
+[node name="gold22" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 144.621, 104.886 )
+
+[node name="gold23" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 92.2456, 66.2798 )
+
+[node name="gold24" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 124.366, 104.886 )
+
+[node name="start" type="Node2D" parent="."]
+position = Vector2( 24.2159, 184.164 )
+
+[node name="end" type="Node2D" parent="."]
+position = Vector2( -315.388, 184.164 )
+
+[node name="single_shelf" parent="." instance=ExtResource( 6 )]
+position = Vector2( -249.96, 153.037 )
+
+[node name="Camera" type="Camera2D" parent="." groups=[
+"camera",
+]]
+position = Vector2( 11.2548, -26.8922 )
+current = true
+
+[node name="crate" parent="." instance=ExtResource( 4 )]
+position = Vector2( -249.96, 148.559 )

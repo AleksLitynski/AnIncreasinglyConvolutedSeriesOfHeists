@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://level_6.gd" type="Script" id=2]
+[ext_resource path="res://gold.tscn" type="PackedScene" id=3]
+[ext_resource path="res://trampoline.tscn" type="PackedScene" id=4]
+[ext_resource path="res://door.tscn" type="PackedScene" id=5]
+[ext_resource path="res://button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://crate_small.tscn" type="PackedScene" id=7]
+[ext_resource path="res://shelf_left.tscn" type="PackedScene" id=8]
+[ext_resource path="res://shelf_right.tscn" type="PackedScene" id=9]
+[ext_resource path="res://shelf_middle.tscn" type="PackedScene" id=10]
+
+[node name="level_6" type="Node2D"]
+position = Vector2( 159, -16 )
+script = ExtResource( 2 )
+
+[node name="background" type="TileMap" parent="."]
+position = Vector2( -159, 16 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -262144, 8, 65537, -262143, 8, 2, -262142, 8, 131075, -262141, 8, 3, -262140, 8, 65538, -262139, 8, 65537, -262138, 8, 2, -262137, 8, 131075, -262136, 8, 3, -262135, 8, 65538, -131080, 9, 65536, -131079, 9, 65537, -131078, 9, 65537, -131077, 9, 65537, -131076, 9, 65537, -131075, 9, 65537, -131074, 9, 65538, -196608, 8, 65536, -196607, 9, 65536, -196606, 9, 65537, -196605, 9, 65537, -196604, 8, 65539, -196603, 8, 65536, -196602, 9, 65537, -196601, 9, 65537, -196600, 9, 65538, -196599, 8, 65539, -65544, 9, 131072, -65543, 9, 131073, -65542, 9, 131073, -65541, 9, 131073, -65540, 9, 131073, -65539, 9, 131073, -65538, 9, 131074, -131072, 8, 65536, -131071, 9, 131072, -131070, 46, 0, -131069, 9, 131073, -131068, 8, 65539, -131067, 8, 65536, -131066, 9, 131073, -131065, 46, 0, -131064, 9, 131074, -131063, 8, 65539, -8, 9, 131072, -7, 9, 131073, -6, 9, 131073, -5, 9, 131073, -4, 9, 131073, -3, 9, 131073, -2, 9, 131074, -65536, 8, 65536, -65535, 9, 131072, -65534, 46, 65536, -65533, 9, 131073, -65532, 8, 65539, -65531, 8, 65536, -65530, 9, 131073, -65529, 46, 65536, -65528, 9, 131074, -65527, 8, 65539, 65528, 9, 131072, 65529, 9, 131073, 65530, 9, 131073, 65531, 9, 131073, 65532, 9, 131073, 65533, 9, 131073, 65534, 9, 131074, 1, 9, 1, 2, 46, 131072, 3, 9, 131073, 4, 8, 0, 5, 8, 1, 6, 9, 131073, 7, 46, 131072, 8, 9, 131074, 9, 8, 65539, 131064, 9, 196608, 131065, 9, 196609, 131066, 9, 196609, 131067, 9, 196609, 131068, 9, 196609, 131069, 9, 196609, 131070, 9, 196610, 131071, 9, 196609, 65536, 9, 196609, 65537, 9, 196609, 65538, 9, 3, 65539, 9, 0, 65540, 9, 131073, 65541, 9, 131073, 65542, 9, 1, 65543, 9, 131073, 65544, 9, 131074, 65545, 8, 65539, 131073, 8, 65536, 131074, 9, 131072, 131075, 9, 131073, 131076, 46, 0, 131077, 9, 131073, 131078, 46, 0, 131079, 9, 131073, 131080, 9, 131074, 131081, 8, 65539, 196609, 8, 65536, 196610, 9, 131072, 196611, 9, 131073, 196612, 46, 65536, 196613, 9, 131073, 196614, 46, 65536, 196615, 9, 131073, 196616, 9, 131074, 196617, 8, 65539, 262145, 8, 65536, 262146, 9, 131072, 262147, 9, 131073, 262148, 46, 131072, 262149, 9, 131073, 262150, 46, 131072, 262151, 9, 131073, 262152, 9, 131074, 262153, 8, 65539, 327681, 8, 65536, 327682, 9, 196608, 327683, 9, 196609, 327684, 9, 196609, 327685, 9, 196609, 327686, 9, 196609, 327687, 9, 196609, 327688, 9, 196610, 327689, 8, 65539, 393217, 7, 65537, 393218, 7, 0, 393219, 7, 0, 393220, 7, 0, 393221, 7, 0, 393222, 7, 0, 393223, 7, 0, 393224, 7, 0, 393225, 7, 65538 )
+
+[node name="crate" parent="background" instance=ExtResource( 4 )]
+position = Vector2( 239.813, 179.435 )
+
+[node name="foreground" type="TileMap" parent="."]
+position = Vector2( -159, 16 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -196617, 8, 65537, -196616, 8, 2, -196615, 8, 131075, -196614, 8, 131075, -196613, 8, 131075, -196612, 8, 131075, -196611, 8, 131075, -196610, 8, 3, -196609, 8, 65538, -131081, 8, 65536, -131073, 8, 65539, -196605, 9, 65538, -196602, 9, 65536, -65545, 8, 65536, -65543, 46, 196609, -65542, 46, 196610, -65541, 46, 196610, -65540, 46, 196610, -65539, 46, 196611, -65537, 8, 65539, -131069, 9, 131074, -131066, 9, 131072, -9, 8, 65536, -1, 8, 65539, -65533, 9, 131074, -65530, 9, 131072, 65527, 8, 65536, 65534, 9, 0, 65535, 8, 0, 0, 8, 1, 3, 9, 131074, 6, 9, 131072, 131063, 8, 65536, 131066, 3, 65536, 131067, 3, 1, 131068, 3, 65537, 131070, 9, 196609, 65540, 9, 65537, 65541, 9, 65537, 196599, 7, 65537, 196600, 7, 0, 196601, 7, 0, 196602, 7, 0, 196603, 7, 0, 196604, 7, 0, 196605, 7, 0, 196606, 7, 0, 196607, 7, 0, 131072, 7, 0, 131073, 7, 65536, 196611, 47, 0, 196613, 47, 0, 196615, 47, 0, 262147, 9, 131073, 262149, 9, 131073, 262151, 9, 131073 )
+
+[node name="crate" parent="foreground" instance=ExtResource( 7 )]
+position = Vector2( -168.118, -20.5375 )
+
+[node name="door" parent="foreground" instance=ExtResource( 5 )]
+position = Vector2( -15.219, 48.2064 )
+doorColor = 2
+
+[node name="button" parent="foreground/door" instance=ExtResource( 6 )]
+position = Vector2( -191.465, -76.7439 )
+
+[node name="single_shelf" parent="foreground" instance=ExtResource( 8 )]
+position = Vector2( 205.882, 40.9433 )
+
+[node name="single_shelf2" parent="foreground/single_shelf" instance=ExtResource( 9 )]
+position = Vector2( 63.3484, 0 )
+
+[node name="single_shelf3" parent="foreground/single_shelf" instance=ExtResource( 10 )]
+position = Vector2( 31.8127, 0 )
+
+[node name="single_shelf2" parent="foreground" instance=ExtResource( 8 )]
+position = Vector2( -208.684, -24.5375 )
+
+[node name="single_shelf2" parent="foreground/single_shelf2" instance=ExtResource( 9 )]
+position = Vector2( 127.348, 0 )
+
+[node name="single_shelf3" parent="foreground/single_shelf2" instance=ExtResource( 10 )]
+position = Vector2( 63.8127, 0 )
+
+[node name="single_shelf4" parent="foreground/single_shelf2" instance=ExtResource( 10 )]
+position = Vector2( 95.8127, 0 )
+
+[node name="single_shelf5" parent="foreground/single_shelf2" instance=ExtResource( 10 )]
+position = Vector2( 31.8127, 0 )
+
+[node name="items" type="Node2D" parent="."]
+
+[node name="gold5" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 49, 62.1632 )
+
+[node name="gold6" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 64.8127, 62.1632 )
+
+[node name="gold7" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 80.8127, 62.1632 )
+
+[node name="gold8" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 96.8127, 62.1632 )
+
+[node name="gold9" parent="items" instance=ExtResource( 3 )]
+position = Vector2( -295.042, -3.82961 )
+
+[node name="gold10" parent="items" instance=ExtResource( 3 )]
+position = Vector2( -265.268, -4.53752 )
+
+[node name="gold11" parent="items" instance=ExtResource( 3 )]
+position = Vector2( 113.098, 62.1632 )
+
+[node name="start" type="Node2D" parent="."]
+position = Vector2( -202.843, 0.595924 )
+
+[node name="end" type="Node2D" parent="."]
+position = Vector2( -383.684, 54.1632 )
+
+[node name="Camera" type="Camera2D" parent="." groups=[
+"camera",
+]]
+position = Vector2( -1, 0.595924 )
+current = true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/vroom.wav-bc31d80421043124151b6443ae737e15.sample"
+
+[deps]
+
+source_file="res://sounds/vroom.wav"
+dest_files=[ "res://.import/vroom.wav-bc31d80421043124151b6443ae737e15.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
