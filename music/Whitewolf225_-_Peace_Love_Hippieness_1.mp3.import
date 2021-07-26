@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Whitewolf225_-_Peace_Love_Hippieness_1.mp3-405192fbf726a78219b40ec88ef73626.mp3str"
+
+[deps]
+
+source_file="res://music/Whitewolf225_-_Peace_Love_Hippieness_1.mp3"
+dest_files=[ "res://.import/Whitewolf225_-_Peace_Love_Hippieness_1.mp3-405192fbf726a78219b40ec88ef73626.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

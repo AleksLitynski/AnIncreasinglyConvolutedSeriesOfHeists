@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/djlang59_-_A_Little_Ditty_on_the_Dance_Floor.mp3-060afc2ca1aef410b638b336fe42231a.mp3str"
+
+[deps]
+
+source_file="res://music/djlang59_-_A_Little_Ditty_on_the_Dance_Floor.mp3"
+dest_files=[ "res://.import/djlang59_-_A_Little_Ditty_on_the_Dance_Floor.mp3-060afc2ca1aef410b638b336fe42231a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
