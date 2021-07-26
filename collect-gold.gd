@@ -9,7 +9,10 @@ func _ready():
 var collected = []
 
 func _on_Area2D_body_entered(body):
+	if collected.find(body.name) != -1:
+		print("duplicate" + body.name)
 	if body.is_in_group("gold") and collected.find(body.name) == -1:
+		
 		collected.append(body.name)
 
 		var c_instance = cash.instance()
