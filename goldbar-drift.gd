@@ -53,6 +53,12 @@ func set_target(t = null):
 		orbit_radius = 2.5
 		orbit_speed = 1
 	target = t
+	collision_layer = 1
+	collision_mask = 1
+	if target and ("name" in target) and target.name == "goldanchor":
+		print("gold non-colliding")
+		collision_layer = 0
+		collision_mask = 0
 
 func fade_out(target):
 	fade_out = target
@@ -64,7 +70,6 @@ func disable_collisions_for(target):
 	add_collision_exception_with(col_exception)
 	for gold in get_tree().get_nodes_in_group("gold"):
 		add_collision_exception_with(gold)
-		
 	
 func enable_collisions_in(time):
 	timer = Timer.new()

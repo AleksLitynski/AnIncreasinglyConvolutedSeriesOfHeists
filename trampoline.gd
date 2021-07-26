@@ -11,13 +11,17 @@ func _on_Area2D_body_entered(body):
 	$SproingSound.play()
 	
 	if body.is_in_group("mc"):
-		body.motion["velocity"].y = -500
+		var velo = -500
+		if Input.is_action_pressed("jump"):
+			velo = -650
+		body.motion["velocity"].y = velo
 		
 	if body.is_in_group("crate") or body.is_in_group("gold"):
 		var velo = body.get_linear_velocity()
 		body.set_linear_velocity(Vector2.ZERO)
 		velo.y = -velo.y
 		body.apply_central_impulse(velo * 200)
+
 
 func _integrate_forces(state):
 	rotation = 0
