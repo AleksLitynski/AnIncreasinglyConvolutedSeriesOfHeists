@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://level_2.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://shelf_left.tscn" type="PackedScene" id=7]
 [ext_resource path="res://shelf_middle.tscn" type="PackedScene" id=8]
 [ext_resource path="res://shelf_right.tscn" type="PackedScene" id=9]
+[ext_resource path="res://door.tscn" type="PackedScene" id=10]
+[ext_resource path="res://button.tscn" type="PackedScene" id=11]
 
 [node name="level_2" type="Node2D"]
 position = Vector2( 159, -16 )
@@ -53,7 +55,7 @@ position = Vector2( -31, -120 )
 position = Vector2( 24, -104 )
 
 [node name="start" type="Node2D" parent="."]
-position = Vector2( -327, -8 )
+position = Vector2( -247, -72 )
 
 [node name="end" type="Node2D" parent="."]
 position = Vector2( -191, 144 )
@@ -86,3 +88,17 @@ position = Vector2( 32.118, 0 )
 
 [node name="single_shelf3" parent="single_shelf/single_shelf2" instance=ExtResource( 7 )]
 position = Vector2( -31.882, 0 )
+
+[node name="door" parent="." instance=ExtResource( 10 )]
+position = Vector2( -271, 0 )
+doorColor = 2
+
+[node name="button" parent="door" instance=ExtResource( 11 )]
+position = Vector2( -32, 0 )
+
+[node name="door2" parent="." instance=ExtResource( 10 )]
+position = Vector2( -143, 96 )
+doorColor = 1
+
+[node name="button" parent="door2" instance=ExtResource( 11 )]
+position = Vector2( -64, -32 )

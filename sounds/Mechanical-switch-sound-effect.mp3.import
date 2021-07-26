@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Mechanical-switch-sound-effect.mp3-1da91ad8746724ae74b342508c3bc96f.mp3str"
+
+[deps]
+
+source_file="res://sounds/Mechanical-switch-sound-effect.mp3"
+dest_files=[ "res://.import/Mechanical-switch-sound-effect.mp3-1da91ad8746724ae74b342508c3bc96f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

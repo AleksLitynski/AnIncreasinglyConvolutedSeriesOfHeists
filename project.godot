@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "StaticBody2D",
+"class": "Door",
+"language": "GDScript",
+"path": "res://door.gd"
+} ]
+_global_script_class_icons={
+"Door": ""
+}
+
 [application]
 
 config/name="An Increasingly Convoluted Series Of Heists"
