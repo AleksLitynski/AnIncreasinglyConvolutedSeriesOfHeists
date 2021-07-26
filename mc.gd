@@ -148,7 +148,7 @@ func encumberment_dampener(jump):
 		return 1 - (len(gold) / (max_gold_weight * 2))
 	return 1 - (len(gold) / max_gold_weight)
 
-func _process(delta):
+func _physics_process(delta):
 	
 	# remove all gold that was picked up by other processes
 	var new_golds = []
