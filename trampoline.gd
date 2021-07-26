@@ -19,3 +19,5 @@ func _on_Area2D_body_entered(body):
 		velo.y = -velo.y
 		body.apply_central_impulse(velo * 200)
 
+func _integrate_forces(state):
+	rotation = 0

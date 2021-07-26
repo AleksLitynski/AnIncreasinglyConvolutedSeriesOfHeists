@@ -25,6 +25,10 @@ var level_sequence = [
 	"level_3",
 	"level_4",
 	"level_5",
+	"level_6",
+	"level_7",
+	"level_8",
+	"level_9",
 ]
 
 func play_next_song():
