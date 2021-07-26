@@ -1,6 +1,5 @@
 extends RigidBody2D
 
-
 # When something lands on it, bounce it upwards
 # Also, play the animation
 func _on_Area2D_body_entered(body):

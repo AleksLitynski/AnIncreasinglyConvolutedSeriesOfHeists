@@ -27,6 +27,8 @@ func _process(delta):
 		add_to_group("shelf")
 	else:
 		$CollisionShape2D.one_way_collision = false
+		for player in get_tree().get_nodes_in_group("mc"):
+			remove_collision_exception_with(player)
 		remove_from_group("shelf")
 
 func openDoor():

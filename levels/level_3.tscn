@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://level_3.gd" type="Script" id=2]
+[ext_resource path="res://gold.tscn" type="PackedScene" id=3]
+[ext_resource path="res://trampoline.tscn" type="PackedScene" id=4]
+[ext_resource path="res://single_shelf.tscn" type="PackedScene" id=5]
+[ext_resource path="res://door.tscn" type="PackedScene" id=10]
+[ext_resource path="res://button.tscn" type="PackedScene" id=11]
+
+[node name="level_3" type="Node2D"]
+position = Vector2( 159, -16 )
+script = ExtResource( 2 )
+
+[node name="background" type="TileMap" parent="."]
+position = Vector2( -159, 16 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -65529, 2, 0, 7, 2, 0, 65543, 2, 0, 131079, 2, 0 )
+
+[node name="foreground" type="TileMap" parent="."]
+position = Vector2( -159, 16 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -262138, 8, 65537, -262137, 8, 2, -262136, 8, 131075, -262135, 8, 3, -262134, 8, 65538, -196602, 9, 65536, -196601, 2, 0, -196600, 9, 65536, -196599, 9, 65538, -196598, 8, 65539, -131068, 9, 65536, -131067, 9, 65537, -131066, 9, 1, -131065, 9, 131073, -131064, 9, 131073, -131063, 9, 131074, -131062, 8, 65539, -65535, 9, 65536, -65534, 9, 65537, -65533, 9, 65537, -65532, 9, 1, -65531, 9, 131073, -65530, 9, 131073, -65529, 2, 0, -65528, 9, 131072, -65527, 9, 131074, -65526, 8, 65539, 65535, 9, 65536, 0, 9, 65537, 1, 9, 1, 2, 9, 131073, 3, 9, 131073, 4, 9, 131073, 5, 9, 131073, 6, 9, 131073, 7, 2, 0, 8, 9, 131072, 9, 9, 131074, 10, 8, 65539, 131069, 9, 65536, 131070, 9, 65537, 131071, 9, 1, 65536, 9, 131073, 65537, 9, 131073, 65538, 9, 131073, 65539, 9, 131073, 65540, 9, 131073, 65541, 9, 131073, 65542, 9, 131073, 65543, 2, 0, 65544, 9, 131072, 65545, 9, 131074, 65546, 8, 65539, 196602, 9, 65536, 196603, 9, 65537, 196604, 9, 65537, 196605, 9, 1, 196606, 9, 131073, 196607, 9, 131073, 131072, 9, 131073, 131073, 9, 131073, 131074, 9, 131073, 131075, 9, 131073, 131076, 9, 131073, 131077, 9, 131073, 131078, 9, 131073, 131079, 2, 0, 131080, 9, 131072, 131081, 9, 131074, 131082, 8, 65539, 262137, 8, 65537, 262138, 3, 65536, 262139, 3, 1, 262140, 3, 1, 262141, 3, 1, 262142, 3, 1, 262143, 3, 1, 196608, 3, 1, 196609, 3, 1, 196610, 3, 1, 196611, 3, 1, 196612, 3, 1, 196613, 3, 1, 196614, 3, 1, 196615, 3, 65537, 196616, 9, 131072, 196617, 9, 131074, 196618, 8, 65539, 327673, 8, 65536, 327674, 9, 65536, 327675, 9, 65537, 327676, 9, 65537, 327677, 9, 65537, 327678, 9, 65537, 327679, 9, 65537, 262144, 9, 65537, 262145, 9, 65537, 262146, 9, 65537, 262147, 9, 65537, 262148, 9, 65537, 262149, 9, 65537, 262150, 9, 65537, 262151, 9, 65537, 262152, 9, 2, 262153, 9, 196610, 262154, 8, 65539, 393209, 7, 65537, 393210, 7, 0, 393211, 7, 0, 393212, 7, 0, 393213, 7, 0, 393214, 7, 0, 393215, 7, 0, 327680, 7, 0, 327681, 7, 0, 327682, 7, 0, 327683, 7, 0, 327684, 7, 0, 327685, 7, 0, 327686, 7, 0, 327687, 2, 0, 327688, 9, 131074, 327689, 2, 0, 327690, 8, 65539, 393223, 2, 0, 393224, 9, 196610, 393225, 2, 0, 393226, 8, 65539, 458759, 7, 0, 458760, 7, 0, 458761, 7, 0, 458762, 8, 65539 )
+
+[node name="single_shelf" parent="." instance=ExtResource( 5 )]
+position = Vector2( 112.008, 164.031 )
+
+[node name="single_shelf2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 113.561, -29.1938 )
+
+[node name="items" type="Node2D" parent="."]
+
+[node name="gold5" parent="items" instance=ExtResource( 3 )]
+position = Vector2( -311, 160 )
+
+[node name="start" type="Node2D" parent="."]
+position = Vector2( -335, 168 )
+
+[node name="end" type="Node2D" parent="."]
+position = Vector2( -271.118, 80 )
+
+[node name="Camera" type="Camera2D" parent="." groups=[
+"camera",
+]]
+current = true
+
+[node name="trampoline" parent="." instance=ExtResource( 4 )]
+position = Vector2( 113.118, 232 )
+
+[node name="door" parent="." instance=ExtResource( 10 )]
+position = Vector2( 81, -32 )
+
+[node name="button" parent="door" instance=ExtResource( 11 )]
+position = Vector2( -352.118, 192 )

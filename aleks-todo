@@ -1,20 +1,15 @@
 todo day 2:
 
-Make levels
-
-
-Effects:
-- background images
-- particle effects
-- music
-
-
+--> Make levels <--
+- add car sound effect
 
 Maybe?
 - fix camera
 - crates squeeze out gold
 - zipline
 - fix buttons/ugly text
+- background images
+- particle effects
 
 
 
@@ -22,10 +17,22 @@ Done features:
 - crate
 - shelf
 - door/button
-  - trampoline
+- trampoline
+- music
 
 
 
 
+- Asset lag time (Mike makes are, I use it wrong 4 hours later, or don't use it at all)
+- Asset work peaks before code work
+- 3rd person on audio or menu screens
+- Have artist bring assets to the point they're .tscn files
 
 
+
+
+- multipe doors for one button
+- don't let trampolines tip
+- turn off physics on gold while moving
+- turn down max power so we can't shoot out the wall
+- should report the failed heist on the "congradulations" page
