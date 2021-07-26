@@ -35,7 +35,7 @@ tile_data = PoolIntArray( -851976, 8, 65537, -851975, 8, 2, -851974, 8, 131075, 
 position = Vector2( 49, -32 )
 
 [node name="single_shelf2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 49, -96 )
+position = Vector2( 49.3969, -91.6346 )
 
 [node name="single_shelf3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 49, 40 )

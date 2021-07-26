@@ -32,6 +32,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="randomize" type="CheckBox" parent="."]
+margin_left = 912.0
+margin_top = 496.0
+margin_right = 1017.0
+margin_bottom = 520.0
+text = "Randomize?"
+
+[node name="starting_level" type="OptionButton" parent="."]
+margin_left = 768.0
+margin_top = 528.0
+margin_right = 1016.0
+margin_bottom = 556.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="credits" type="Button" parent="."]
+margin_left = 936.0
+margin_top = 568.0
+margin_right = 1017.0
+margin_bottom = 596.0
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Car" parent="." instance=ExtResource( 3 )]
 position = Vector2( -160, 200 )
 scale = Vector2( 1.375, 1.375 )
@@ -43,3 +69,6 @@ script = ExtResource( 5 )
 [connection signal="mouse_entered" from="help" to="." method="_on_help_mouse_entered"]
 [connection signal="mouse_exited" from="help" to="." method="_on_help_mouse_exited"]
 [connection signal="pressed" from="help" to="." method="_on_help_pressed"]
+[connection signal="toggled" from="randomize" to="." method="_on_randomize_toggled"]
+[connection signal="item_selected" from="starting_level" to="." method="_on_starting_level_item_selected"]
+[connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]

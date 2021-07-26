@@ -5,8 +5,9 @@ var rand
 func _ready():
 	rand = RandomNumberGenerator.new()
 	rand.randomize()
+	randomize()
 	# load_level("main_menu", false)
-	load_level("level_6", false)
+	load_level("main_menu", false)
 	play_next_song()
 
 var current_level = null
@@ -29,7 +30,10 @@ var level_sequence = [
 	"level_7",
 	"level_8",
 	"level_9",
+	"level_10",
 ]
+
+var randomize_level = false
 
 func play_next_song():
 	[$Song_1, $Song_2, $Song_3, $Song_4][rand.randi_range(0, 3)].play()
@@ -37,6 +41,8 @@ func play_next_song():
 func goto_next_level():
 	var c_lvl_idx = level_sequence.find(current_level.level_id)
 	var n_lvl_idx = c_lvl_idx + 1
+	if randomize_level:
+		n_lvl_idx = randi() % level_sequence.size()
 	if c_lvl_idx == -1 or n_lvl_idx >= len(level_sequence):
 		load_level(level_sequence[0])
 		return
