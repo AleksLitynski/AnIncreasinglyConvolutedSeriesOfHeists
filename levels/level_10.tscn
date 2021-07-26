@@ -1,13 +1,16 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://crate_small.tscn" type="PackedScene" id=2]
 [ext_resource path="res://gold.tscn" type="PackedScene" id=3]
+[ext_resource path="res://shelf_right.tscn" type="PackedScene" id=4]
 [ext_resource path="res://trampoline.tscn" type="PackedScene" id=5]
 [ext_resource path="res://single_shelf.tscn" type="PackedScene" id=6]
 [ext_resource path="res://level_10.gd" type="Script" id=7]
 [ext_resource path="res://door.tscn" type="PackedScene" id=8]
 [ext_resource path="res://button.tscn" type="PackedScene" id=9]
+[ext_resource path="res://shelf_middle.tscn" type="PackedScene" id=10]
+[ext_resource path="res://shelf_left.tscn" type="PackedScene" id=11]
 
 [node name="level_10" type="Node2D"]
 position = Vector2( 159, -16 )
@@ -29,10 +32,10 @@ cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 32
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( -393214, 3, 1, -393213, 3, 1, -393212, 3, 1, -327678, 3, 1, -327676, 3, 1, -327671, 3, 1, -327670, 3, 1, -327669, 3, 1, -262142, 3, 1, -262140, 3, 1, -262135, 3, 1, -262133, 3, 1, -196606, 3, 1, -196604, 3, 1, -196599, 3, 1, -196597, 3, 1, -65540, 3, 1, -65539, 3, 1, -65538, 3, 1, -65537, 3, 1, -131072, 3, 1, -131071, 3, 1, -131070, 3, 1, -131068, 3, 1, -131067, 3, 1, -131066, 3, 1, -131065, 3, 1, -131064, 3, 1, -131063, 3, 1, -131061, 3, 1, -4, 3, 1, -65525, 3, 1, 65528, 3, 1, 65529, 3, 1, 65530, 3, 1, 65531, 3, 1, 65532, 3, 1, 7, 3, 1, 8, 3, 1, 9, 3, 65537, 11, 3, 1, 131064, 3, 1, 65540, 3, 1, 65541, 3, 1, 65542, 3, 1, 65543, 3, 1, 65544, 3, 1, 65545, 3, 1, 65547, 3, 1, 196600, 3, 1, 196604, 3, 1, 131076, 3, 1, 131081, 3, 1, 131083, 3, 1, 262136, 3, 1, 262137, 3, 1, 262138, 3, 1, 262139, 3, 1, 262140, 3, 1, 196612, 3, 1, 196617, 3, 1, 196619, 3, 1, 327676, 3, 1, 262148, 3, 1, 262153, 3, 1, 262155, 3, 1, 393212, 3, 1, 327684, 3, 1, 327689, 3, 1, 327690, 3, 1, 327691, 3, 1, 458748, 3, 1, 458749, 3, 1, 458750, 3, 1, 458751, 3, 1, 393216, 3, 1, 393217, 3, 1, 393218, 3, 1, 393219, 3, 1, 393220, 3, 1 )
+tile_data = PoolIntArray( -589815, 3, 1, -589814, 3, 1, -589813, 3, 1, -524279, 3, 1, -524277, 3, 1, -458743, 3, 1, -458741, 3, 1, -393207, 3, 1, -393205, 3, 1, -327671, 3, 1, -327669, 3, 1, -196610, 3, 1, -196609, 3, 1, -262144, 3, 1, -262143, 3, 1, -262142, 3, 1, -262141, 3, 1, -262140, 3, 1, -262135, 3, 1, -262133, 3, 1, -131074, 3, 1, -196608, 3, 1, -196606, 3, 1, -196604, 3, 1, -196599, 3, 1, -196597, 3, 1, -65540, 3, 1, -65539, 3, 1, -65538, 3, 1, -131072, 3, 1, -131070, 3, 1, -131068, 3, 1, -131067, 3, 1, -131066, 3, 1, -131065, 3, 1, -131064, 3, 1, -131063, 3, 1, -131061, 3, 1, -4, 3, 1, -65525, 3, 1, 65528, 3, 1, 65529, 3, 1, 65530, 3, 1, 65531, 3, 1, 65532, 3, 1, 7, 3, 1, 8, 3, 1, 9, 3, 65537, 11, 3, 1, 131064, 3, 1, 65540, 3, 1, 65541, 3, 1, 65542, 3, 1, 65543, 3, 1, 65544, 3, 1, 65545, 3, 1, 65547, 3, 1, 196600, 3, 1, 196604, 3, 1, 131076, 3, 1, 131081, 3, 1, 131083, 3, 1, 262136, 3, 1, 262140, 3, 1, 196612, 3, 1, 196617, 3, 1, 196619, 3, 1, 327672, 3, 1, 327676, 3, 1, 262148, 3, 1, 262153, 3, 1, 262155, 3, 1, 393208, 3, 1, 327684, 3, 1, 327689, 3, 1, 327690, 3, 1, 327691, 3, 1, 458744, 3, 1, 458745, 3, 1, 458746, 3, 1, 458747, 3, 1, 458748, 3, 1, 458749, 3, 1, 458750, 3, 1, 458751, 3, 1, 393216, 3, 1, 393217, 3, 1, 393218, 3, 1, 393219, 3, 1, 393220, 3, 1 )
 
 [node name="crate3" parent="." instance=ExtResource( 5 )]
-position = Vector2( -130.4, 198.691 )
+position = Vector2( -129.4, 197.691 )
 
 [node name="crate2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 83.3447, 9.07904 )
@@ -47,13 +50,37 @@ doorColor = 1
 [node name="button" parent="door3" instance=ExtResource( 9 )]
 position = Vector2( 449.37, -127.632 )
 
+[node name="door6" parent="." instance=ExtResource( 8 )]
+position = Vector2( -271.144, 190.691 )
+
+[node name="button" parent="door6" instance=ExtResource( 9 )]
+position = Vector2( -36.5153, 0 )
+
 [node name="door2" parent="." instance=ExtResource( 8 )]
-position = Vector2( -46.2804, -32.0646 )
+position = Vector2( -46.3237, -32.8834 )
 rotation = 1.57079
 doorColor = 1
 
 [node name="button" parent="door2" instance=ExtResource( 9 )]
 position = Vector2( -63.5229, -223.507 )
+rotation = -1.57079
+
+[node name="door4" parent="." instance=ExtResource( 8 )]
+position = Vector2( -109.811, -32.8834 )
+rotation = 1.57079
+doorColor = 1
+
+[node name="button" parent="door4" instance=ExtResource( 9 )]
+position = Vector2( -95.5228, -286.995 )
+rotation = -1.57079
+
+[node name="door5" parent="." instance=ExtResource( 8 )]
+position = Vector2( -174.697, -32.1984 )
+rotation = 1.57079
+doorColor = 1
+
+[node name="button" parent="door5" instance=ExtResource( 9 )]
+position = Vector2( -129.023, -351.988 )
 rotation = -1.57079
 
 [node name="door" parent="." instance=ExtResource( 8 )]
@@ -85,37 +112,46 @@ position = Vector2( -621.77, 72.2406 )
 position = Vector2( -604.632, 72.2406 )
 
 [node name="gold16" parent="items" instance=ExtResource( 3 )]
-position = Vector2( -315.294, -122.982 )
+position = Vector2( -386.37, -88.0871 )
 
 [node name="gold18" parent="items" instance=ExtResource( 3 )]
-position = Vector2( -315.294, -106.421 )
+position = Vector2( -323.294, -102.531 )
 
 [node name="gold19" parent="items" instance=ExtResource( 3 )]
-position = Vector2( -257.715, 8 )
+position = Vector2( -450.794, -101.823 )
 
 [node name="gold20" parent="items" instance=ExtResource( 3 )]
-position = Vector2( -341.563, 167.99 )
+position = Vector2( -323.412, 167.99 )
 
 [node name="gold21" parent="items" instance=ExtResource( 3 )]
 position = Vector2( -587.632, 72.2406 )
 
 [node name="gold22" parent="items" instance=ExtResource( 3 )]
-position = Vector2( -315.294, -155.816 )
+position = Vector2( -450.794, -87.5313 )
 
 [node name="gold23" parent="items" instance=ExtResource( 3 )]
-position = Vector2( -315.294, -88.795 )
+position = Vector2( -323.294, -88.441 )
 
 [node name="gold24" parent="items" instance=ExtResource( 3 )]
-position = Vector2( -315.412, -139.338 )
+position = Vector2( -386.37, -102.177 )
 
 [node name="start" type="Node2D" parent="."]
 position = Vector2( -46.3237, 124.948 )
 
 [node name="end" type="Node2D" parent="."]
-position = Vector2( -218.523, 182.685 )
+position = Vector2( -218.523, 182.691 )
 
 [node name="Camera" type="Camera2D" parent="." groups=[
 "camera",
 ]]
 position = Vector2( 11.2548, -26.8922 )
 current = true
+
+[node name="single_shelf2" parent="." instance=ExtResource( 11 )]
+position = Vector2( -367.381, 99.5559 )
+
+[node name="single_shelf3" parent="single_shelf2" instance=ExtResource( 10 )]
+position = Vector2( 31.7192, 0 )
+
+[node name="single_shelf4" parent="single_shelf2" instance=ExtResource( 4 )]
+position = Vector2( 63.7564, 0 )
