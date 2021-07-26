@@ -176,10 +176,9 @@ func _process(delta):
 			-motion["max_speed"],
 			motion["max_speed"]) * encumberment_dampener(false)
 
-	if is_on_floor():
-		if Input.is_action_pressed("jump") and !jump["active"]:
-			jump["active"] = true
-			motion["velocity"].y -= jump["current"] * encumberment_dampener(true)
+	if is_on_floor() and Input.is_action_pressed("jump") and !jump["active"]:
+		jump["active"] = true
+		motion["velocity"].y -= jump["current"] * encumberment_dampener(true)
 
 	if Input.is_action_pressed("jump") and jump["active"]:
 		jump["current"] *= jump["falloff"]
@@ -246,15 +245,6 @@ func _process(delta):
 	# always lower arm after throwing something
 	pressed_state(false, ANIM_STATE.THROW_HOLD)
 
-#	$Camera2D/debug.text = str(motion["velocity"]) \
-#		+ "\n" + str(anim["state"]) \
-#		+ "\n throw_state:" + str(throw_state) \
-#		+ "\n grab_state:" + str(grab_state) \
-#		+ "\n anim_time:" + str(anim["time"]) \
-#		+ "\n state_start_time:" + str(anim["start_time"]) \
-#		+ "\n frame_times[anim_state]:" + str(frame_times[anim["state"]]) \
-#		+ "\n anim_done:" + str(anim["time"] - anim["start_time"] > frame_times[anim["state"]]) \
-
 	motion["velocity"].y += motion["gravity"]
 	motion["velocity"] = move_and_slide(motion["velocity"], Vector2.UP, false, 4, PI/4, false)
 	
@@ -266,7 +256,16 @@ func _process(delta):
 		if collision.collider.is_in_group("crate"):
 			collision.collider.apply_central_impulse(-collision.normal * 1200)
 
-
 func moving():
 	var velo = motion["velocity"]
 	return velo.x > 0.1 or velo.x < -0.1 or velo.y > 0.1 or velo.y < -0.1
+
+func _input(ev):
+	
+	if ev.is_action_pressed("down"):
+		for shelf in get_tree().get_nodes_in_group("shelf"):
+			shelf.add_collision_exception_with(self)
+		
+	if ev.is_action_released("down"):
+		for shelf in get_tree().get_nodes_in_group("shelf"):
+			shelf.remove_collision_exception_with(self)

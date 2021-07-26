@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://level_2.gd" type="Script" id=2]
 [ext_resource path="res://gold.tscn" type="PackedScene" id=3]
 [ext_resource path="res://crate_large.tscn" type="PackedScene" id=4]
 [ext_resource path="res://crate_small.tscn" type="PackedScene" id=5]
+[ext_resource path="res://single_shelf.tscn" type="PackedScene" id=6]
+[ext_resource path="res://shelf_left.tscn" type="PackedScene" id=7]
+[ext_resource path="res://shelf_middle.tscn" type="PackedScene" id=8]
+[ext_resource path="res://shelf_right.tscn" type="PackedScene" id=9]
 
 [node name="level_2" type="Node2D"]
 position = Vector2( 159, -16 )
@@ -70,3 +74,15 @@ position = Vector2( -55, -8 )
 
 [node name="crate4" parent="." instance=ExtResource( 5 )]
 position = Vector2( -111, -48 )
+
+[node name="single_shelf" parent="." instance=ExtResource( 6 )]
+position = Vector2( -207, 16 )
+
+[node name="single_shelf2" parent="single_shelf" instance=ExtResource( 8 )]
+position = Vector2( 255.882, -8 )
+
+[node name="single_shelf2" parent="single_shelf/single_shelf2" instance=ExtResource( 9 )]
+position = Vector2( 32.118, 0 )
+
+[node name="single_shelf3" parent="single_shelf/single_shelf2" instance=ExtResource( 7 )]
+position = Vector2( -31.882, 0 )

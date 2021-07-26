@@ -1,20 +1,34 @@
 todo day 2:
 
+Make levels
 
-- make levels
 
-- item mechanics
+Item mechanics:
   - trampoline
   - door/button
-  - zipline
-  - shelf
-  - crate
- 
 
 
+ Don't do yet:
+- zipline
 
 
+Effects:
 - sounds
 - background images
 - particle effects
+- fix buttons/ugly text
+- music
 
+
+
+
+Maybe?
+- fix camera
+- crates squeeze out gold
+
+
+
+
+Done features:
+- crate
+- shelf
