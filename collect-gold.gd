@@ -6,8 +6,11 @@ func _ready():
 	randomize()
 
 
+var collected = []
+
 func _on_Area2D_body_entered(body):
-	if body.is_in_group("gold"):
+	if body.is_in_group("gold") and collected.find(body.name) == -1:
+		collected.append(body.name)
 
 		var c_instance = cash.instance()
 		body.get_parent().add_child(c_instance)

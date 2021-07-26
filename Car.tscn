@@ -28,6 +28,7 @@ extents = Vector2( 27.1515, 19.3939 )
 position = Vector2( -432, 400 )
 scale = Vector2( 6.1875, 6.1875 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="." groups=[
