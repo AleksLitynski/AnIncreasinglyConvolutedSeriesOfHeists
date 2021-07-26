@@ -48,12 +48,14 @@ position = Vector2( 81, -216 )
 
 [node name="door" parent="." instance=ExtResource( 10 )]
 position = Vector2( 81, 96 )
+doorColor = 1
 
 [node name="button" parent="door" instance=ExtResource( 11 )]
 position = Vector2( -448, -8 )
 
 [node name="door2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 81, -320 )
+doorColor = 2
 
 [node name="button" parent="door2" instance=ExtResource( 11 )]
 position = Vector2( 63.764, 126.849 )
