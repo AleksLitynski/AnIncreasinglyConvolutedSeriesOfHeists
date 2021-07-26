@@ -103,7 +103,7 @@ func start_level():
 	stats = {
 		"gold": 0,
 		"max_gold": len(get_tree().get_nodes_in_group("gold")),
-		"time": 1
+		"time": 60
 	}
 	
 func calc_final_stats():
