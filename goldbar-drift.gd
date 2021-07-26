@@ -56,7 +56,6 @@ func set_target(t = null):
 	collision_layer = 1
 	collision_mask = 1
 	if target and ("name" in target) and target.name == "goldanchor":
-		print("gold non-colliding")
 		collision_layer = 0
 		collision_mask = 0
 

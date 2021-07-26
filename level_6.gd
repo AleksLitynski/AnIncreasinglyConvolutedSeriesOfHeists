@@ -1,7 +1,9 @@
 extends "res://level_abstract.gd"
 
 var level_id = "level_6" # must match .tscn name!
-var level_name = "Level 6"
+var level_name = "One Last Job"
 var level_description = """
-Hi mom
+This one is easy, according to the guy who made it.
+
+Punch that trampoline!
 """

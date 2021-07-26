@@ -1,8 +1,8 @@
 extends "res://level_abstract.gd"
 
 var level_id = "level_10" # must match .tscn name!
-var level_name = "Level 10"
+var level_name = "A Broken Perpetual Motion Machine"
 var level_description = """
-\"Holy shit\"
+\"Who puts gold in the ceiling?\"
 - Jace Beleren
 """
