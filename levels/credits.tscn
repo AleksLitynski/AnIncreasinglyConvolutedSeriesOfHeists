@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
+[ext_resource path="res://themes/text_theme.tres" type="Theme" id=1]
 [ext_resource path="res://game_over.gd" type="Script" id=2]
 [ext_resource path="res://sprites/uibutton_back3.png" type="Texture" id=3]
 [ext_resource path="res://sprites/uibutton_back1.png" type="Texture" id=4]
@@ -16,33 +17,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 704.0
-margin_top = 232.0
-margin_right = 972.0
-margin_bottom = 512.0
-toggle_mode = true
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 3 )
-texture_hover = ExtResource( 5 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-margin_left = 40.0
-margin_top = 48.0
-margin_right = 528.0
-margin_bottom = 376.0
-rect_scale = Vector2( 1.4, 1.4 )
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 976.0
+margin_bottom = 584.0
+theme = ExtResource( 1 )
 bbcode_enabled = true
 bbcode_text = "
 Developed By Mike Lyle and Aleks Litynski
-
-
-
-
 
 [u]Audio from all over the internet:[/u]
 Darkroom ft. Briareus, Stefan Kartenberg, Alex
@@ -54,16 +37,14 @@ freesound.org
 orangefreesounds.com
 opengameart.org
 
-
-
 https://creativecommons.org/licenses/by-nc/3.0/
-https://creativecommons.org/licenses/by/4.0/legalcode"
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+
+
+Any reference to Planeswalkers living or dead is purely coincidental."
 text = "
-Developed By [u]Mike Lyle[/u] and [u]Aleks Litynski[/u]
-
-
-
-
+Developed By Mike Lyle and Aleks Litynski
 
 Audio from all over the internet:
 Darkroom ft. Briareus, Stefan Kartenberg, Alex
@@ -75,10 +56,12 @@ freesound.org
 orangefreesounds.com
 opengameart.org
 
-
-
 https://creativecommons.org/licenses/by-nc/3.0/
-https://creativecommons.org/licenses/by/4.0/legalcode"
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+
+
+Any reference to Planeswalkers living or dead is purely coincidental."
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -87,6 +70,20 @@ __meta__ = {
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 704.0
+margin_top = 216.0
+margin_right = 972.0
+margin_bottom = 496.0
+toggle_mode = true
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

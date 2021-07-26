@@ -1,7 +1,11 @@
 extends "res://level_abstract.gd"
 
 var level_id = "level_9" # must match .tscn name!
-var level_name = "Level 9"
+var level_name = "9: The Magnificent Trove"
 var level_description = """
-I'm gonna leap the heck outta this moon rocket!
+This is the heist of the century, boys.
+
+All we're going to need is an old van, a trampoline, and 800 pounds of solid gold.
+
+I've got the van and the trampoline.
 """
