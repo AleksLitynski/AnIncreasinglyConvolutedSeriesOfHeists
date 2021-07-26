@@ -27,9 +27,6 @@ func collect_gold(gold):
 
 
 func _on_Area2D_body_entered(body):
-	if collected.find(body.name) != -1:
-		print("duplicate" + body.name)
-	
 	if body.is_in_group("mc"):
 		# collect all gold from bag
 		for g in body.gold:
@@ -37,4 +34,11 @@ func _on_Area2D_body_entered(body):
 		
 	if body.is_in_group("gold"):
 		collect_gold(body)
-		
+
+
+func _process(delta):
+	for body in get_overlapping_bodies():
+		if body.is_in_group("mc"):
+			# collect all gold from bag
+			for g in body.gold:
+				collect_gold(g)

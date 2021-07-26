@@ -24,14 +24,14 @@ margin_right = 976.0
 margin_bottom = 584.0
 theme = ExtResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
-Developed By Mike Lyle and Aleks Litynski
+bbcode_text = "Developed By [u]Mike Lyle[/u] and [u]Aleks Litynski[/u]
 
-[u]Audio from all over the internet:[/u]
-Darkroom ft. Briareus, Stefan Kartenberg, Alex
-Whitewolf ft. Apoxode, Speck, Admiral Bob, bangcorrupt, Martijn de Boer
-J.Lang ft. Septahelix
-Robbero ft. Mana Junkie
+[u]Audio from all over the internet[/u]
+
+[u]Warp Drive[/u] - Darkroom ft. Briareus, Stefan Kartenberg, Alex
+[u]Peace, Love, Hippieness[/u] - Whitewolf ft. Apoxode, Speck, Admiral Bob, bangcorrupt, Martijn de Boer
+[u]A Little Diddy on the Dance Floor[/u] - J.Lang ft. Septahelix
+[u]Graffiti Wall[/u] - Robbero ft. Mana Junkie
 BigSoundBank.com
 freesound.org
 orangefreesounds.com
@@ -39,18 +39,17 @@ opengameart.org
 
 https://creativecommons.org/licenses/by-nc/3.0/
 https://creativecommons.org/licenses/by/4.0/legalcode
-
 
 
 Any reference to Planeswalkers living or dead is purely coincidental."
-text = "
-Developed By Mike Lyle and Aleks Litynski
+text = "Developed By Mike Lyle and Aleks Litynski
 
-Audio from all over the internet:
-Darkroom ft. Briareus, Stefan Kartenberg, Alex
-Whitewolf ft. Apoxode, Speck, Admiral Bob, bangcorrupt, Martijn de Boer
-J.Lang ft. Septahelix
-Robbero ft. Mana Junkie
+Audio from all over the internet
+
+Warp Drive - Darkroom ft. Briareus, Stefan Kartenberg, Alex
+Peace, Love, Hippieness - Whitewolf ft. Apoxode, Speck, Admiral Bob, bangcorrupt, Martijn de Boer
+A Little Diddy on the Dance Floor - J.Lang ft. Septahelix
+Graffiti Wall - Robbero ft. Mana Junkie
 BigSoundBank.com
 freesound.org
 orangefreesounds.com
@@ -58,7 +57,6 @@ opengameart.org
 
 https://creativecommons.org/licenses/by-nc/3.0/
 https://creativecommons.org/licenses/by/4.0/legalcode
-
 
 
 Any reference to Planeswalkers living or dead is purely coincidental."
@@ -76,9 +74,9 @@ __meta__ = {
 
 [node name="TextureButton" type="TextureButton" parent="."]
 margin_left = 704.0
-margin_top = 216.0
+margin_top = 232.0
 margin_right = 972.0
-margin_bottom = 496.0
+margin_bottom = 512.0
 toggle_mode = true
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 3 )

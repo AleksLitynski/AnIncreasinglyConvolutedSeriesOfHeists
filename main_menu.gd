@@ -40,7 +40,6 @@ func _ready():
 	randomize()
 
 func _on_randomize_toggled(button_pressed):
-	print(button_pressed)
 	get_tree().get_nodes_in_group("main")[0].randomize_level = button_pressed
 
 func _on_starting_level_item_selected(index):
