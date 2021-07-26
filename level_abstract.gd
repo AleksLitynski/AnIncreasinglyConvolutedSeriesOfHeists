@@ -28,7 +28,6 @@ func _ready():
 	golds.z_index = 101
 	golds.transform.origin.x = -235
 	golds.transform.origin.y = -130
-	var gc = len(get_tree().get_nodes_in_group("gold"))
 	var idx = 0.0
 	var max_width = 400.0
 	for gold in get_tree().get_nodes_in_group("gold"):

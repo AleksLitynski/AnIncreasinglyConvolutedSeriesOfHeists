@@ -6,7 +6,7 @@ func _ready():
 	rand = RandomNumberGenerator.new()
 	rand.randomize()
 	# load_level("main_menu", false)
-	load_level("level_2", false)
+	load_level("main_menu", false)
 	play_next_song()
 
 var current_level = null
@@ -22,6 +22,9 @@ var final_stats = {
 var level_sequence = [
 	"level_1",
 	"level_2",
+	"level_3",
+	"level_4",
+	"level_5",
 ]
 
 func play_next_song():
