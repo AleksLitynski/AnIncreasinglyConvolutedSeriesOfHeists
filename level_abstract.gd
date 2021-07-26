@@ -6,6 +6,9 @@ onready var van = preload("res://Car.tscn").instance()
 onready var player = preload("res://mc.tscn").instance()
 onready var clock = preload("res://clock.tscn").instance()
 onready var golds = Node2D.new()
+var gold_icon = preload("res://gold_icon.tscn")
+var gold_color = preload("res://sprites/goldbar3.png")
+var gold_bw = preload("res://sprites/goldbar3_gray.png")
 
 func _ready():
 	add_child(van)
@@ -21,9 +24,23 @@ func _ready():
 	clock.transform.origin.x = 225
 	clock.transform.origin.y = -115
 	clock.scale = Vector2(0.8, 0.8)
+	clock.z_index = 101
+	golds.z_index = 101
+	golds.transform.origin.x = -235
+	golds.transform.origin.y = -130
+	var gc = len(get_tree().get_nodes_in_group("gold"))
+	var idx = 0.0
+	var max_width = 400.0
+	for gold in get_tree().get_nodes_in_group("gold"):
+		var i = gold_icon.instance()
+		i.texture = gold_bw
+		golds.add_child(i)
+		i.transform.origin = Vector2(
+			ceil(fmod((30.0 * idx), max_width)),
+			floor(((30.0 * idx) / max_width)) * 30.0
+		)
+		idx += 1.0
 	
-	clock.transform.origin.x = -225
-	clock.transform.origin.y = -115
 
 func _process(delta):
 	match state:
@@ -91,3 +108,10 @@ func win_level():
 	player.collision_layer = 2
 	player.collision_mask = 2
 	state = "win_jump_car"
+
+func add_gold():
+	print("add gold")
+	for gold in golds.get_children():
+		if gold.texture == gold_bw:
+			gold.texture = gold_color
+			break
