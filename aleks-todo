@@ -32,7 +32,5 @@ Done features:
 
 
 - multipe doors for one button
-- don't let trampolines tip
 - turn off physics on gold while moving
 - turn down max power so we can't shoot out the wall
-- should report the failed heist on the "congradulations" page

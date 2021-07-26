@@ -1,7 +1,8 @@
 extends Node2D
 
 func anim_done():
-	get_tree().get_nodes_in_group("main")[0].load_level("level_1")
+	var main = get_tree().get_nodes_in_group("main")[0]
+	main.load_level(main.level_sequence[0])
 
 func _on_play_mouse_entered():
 	$splash_idle.texture = preload("res://sprites/splash_play.png")
