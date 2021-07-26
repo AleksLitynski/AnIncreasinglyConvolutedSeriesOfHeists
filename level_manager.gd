@@ -31,6 +31,7 @@ var level_sequence = [
 	"level_8",
 	"level_9",
 	"level_10",
+	"level_11"
 ]
 
 var randomize_level = false
