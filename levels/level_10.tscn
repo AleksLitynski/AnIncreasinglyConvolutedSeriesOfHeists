@@ -43,18 +43,18 @@ position = Vector2( 83.3447, 9.07904 )
 [node name="single_shelf" parent="." instance=ExtResource( 6 )]
 position = Vector2( 177.291, -60.0879 )
 
+[node name="door6" parent="." instance=ExtResource( 8 )]
+position = Vector2( -270.404, 192.056 )
+
+[node name="button" parent="door6" instance=ExtResource( 9 )]
+position = Vector2( -36.5153, 0 )
+
 [node name="door3" parent="." instance=ExtResource( 8 )]
 position = Vector2( -272.144, 63.8016 )
 doorColor = 1
 
 [node name="button" parent="door3" instance=ExtResource( 9 )]
 position = Vector2( 449.37, -127.632 )
-
-[node name="door6" parent="." instance=ExtResource( 8 )]
-position = Vector2( -271.144, 190.691 )
-
-[node name="button" parent="door6" instance=ExtResource( 9 )]
-position = Vector2( -36.5153, 0 )
 
 [node name="door2" parent="." instance=ExtResource( 8 )]
 position = Vector2( -46.3237, -32.8834 )
