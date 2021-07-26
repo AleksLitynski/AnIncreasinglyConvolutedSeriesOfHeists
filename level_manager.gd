@@ -147,6 +147,7 @@ func lose_level():
 func win_level():
 	if lose_state == null:
 		$WinSound.play()
+		get_tree().get_nodes_in_group("main")[0].get_node("VroomSound").play()
 		levels_won += 1
 		current_level.win_level()
 		stats = null

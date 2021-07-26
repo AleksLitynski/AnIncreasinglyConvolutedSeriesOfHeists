@@ -27,6 +27,7 @@ func load_level(lvl):
 		$Target_Text.bbcode_text += "\n" + level.level_description
 
 func pressed():
+	get_tree().get_nodes_in_group("main")[0].get_node("VroomSound").play()
 	state = "exit"
 
 func swap_to_level():
