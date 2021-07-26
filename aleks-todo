@@ -5,7 +5,6 @@ Make levels
 
 Item mechanics:
   - trampoline
-  - door/button
 
 
  Don't do yet:
@@ -28,7 +27,7 @@ Maybe?
 
 
 
-
 Done features:
 - crate
 - shelf
+- door/button
