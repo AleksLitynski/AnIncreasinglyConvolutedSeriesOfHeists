@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mactonite_-_Warp_Drive_1.mp3-ef9ab0b8f427aca0ad68bb45970fd2f4.mp3str"
+
+[deps]
+
+source_file="res://music/mactonite_-_Warp_Drive_1.mp3"
+dest_files=[ "res://.import/mactonite_-_Warp_Drive_1.mp3-ef9ab0b8f427aca0ad68bb45970fd2f4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
