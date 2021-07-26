@@ -6,7 +6,6 @@ func _ready():
 	rand = RandomNumberGenerator.new()
 	rand.randomize()
 	randomize()
-	# load_level("main_menu", false)
 	load_level("main_menu", false)
 	play_next_song()
 

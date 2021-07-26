@@ -214,16 +214,24 @@ func _physics_process(delta):
 
 	if grab_state == PRESS_STATES.START:
 		var bodies = $grabbox.get_overlapping_bodies()
+		var found_gold = false
+
+		# given the choice, pick up gold....
 		for b in bodies:
-			if b.is_in_group("crate"):
-				b.apply_central_impulse((b.global_transform.origin - global_transform.origin).normalized() * 14_000)
-				break
 			if b.is_in_group("gold"):
 				$PickupSound.play()
 				b.set_target($goldanchor)
 				b.disable_collisions_for(self)
 				gold.push_back(b)
+				found_gold = true
 				break # only pick up one per grab
+		
+		# if there was no gold to grab, push a box...
+		if !found_gold:
+			for b in bodies:
+				if b.is_in_group("crate"):
+					b.apply_central_impulse((b.global_transform.origin - global_transform.origin).normalized() * 14_000)
+					break
 
 	if throw_state == PRESS_STATES.START:
 		if (len(gold) > 0):
