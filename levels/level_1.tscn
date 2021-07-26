@@ -99,6 +99,3 @@ position = Vector2( 89, -104 )
 
 [node name="crate4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 89, -120 )
-
-[node name="crate5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 89, -136 )
