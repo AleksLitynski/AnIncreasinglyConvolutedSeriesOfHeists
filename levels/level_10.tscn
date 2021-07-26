@@ -50,7 +50,7 @@ position = Vector2( -270.404, 192.056 )
 position = Vector2( -36.5153, 0 )
 
 [node name="door3" parent="." instance=ExtResource( 8 )]
-position = Vector2( -167, 24 )
+position = Vector2( -270.404, 64 )
 doorColor = 1
 
 [node name="button" parent="door3" instance=ExtResource( 9 )]
