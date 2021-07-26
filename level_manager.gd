@@ -7,6 +7,7 @@ func _ready():
 	rand.randomize()
 	# load_level("main_menu", false)
 	load_level("level_2", false)
+	play_next_song()
 
 var current_level = null
 var stats = null
@@ -22,6 +23,9 @@ var level_sequence = [
 	"level_1",
 	"level_2",
 ]
+
+func play_next_song():
+	[$Song_1, $Song_2, $Song_3, $Song_4][rand.randi_range(0, 3)].play()
 
 func goto_next_level():
 	var c_lvl_idx = level_sequence.find(current_level.level_id)
@@ -125,7 +129,7 @@ func lose_level():
 #	bars.transform.origin.y = 616
 	bars.transform.origin.y = 300
 	bars.transform.origin.x = -256
-	bars.z_index = 102
+	bars.z_index = 104
 	
 	lose_state = "bars_up"
 	calc_final_stats()
