@@ -1,30 +1,39 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://sprites/splash_gameover.png" type="Texture" id=1]
+[ext_resource path="res://sprites/uibutton_playagain2.png" type="Texture" id=1]
 [ext_resource path="res://game_over.gd" type="Script" id=2]
+[ext_resource path="res://sprites/uibutton_playagain1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/uibutton_playagain3.png" type="Texture" id=4]
+[ext_resource path="res://sprites/splash_gameover2.png" type="Texture" id=5]
+[ext_resource path="res://themes/text_theme.tres" type="Theme" id=6]
 
 [node name="game_over" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="splash_gameover" type="Sprite" parent="."]
 position = Vector2( 512, 300 )
-texture = ExtResource( 1 )
+texture = ExtResource( 5 )
 
-[node name="Button" type="Button" parent="."]
-margin_left = 463.334
-margin_top = 476.788
-margin_right = 540.334
-margin_bottom = 496.788
-text = "Play Again"
+[node name="Button" type="TextureButton" parent="."]
+margin_left = 604.273
+margin_top = 338.0
+margin_right = 823.273
+margin_bottom = 557.0
+toggle_mode = true
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 1 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 350.363
-margin_top = 318.7
-margin_right = 672.363
-margin_bottom = 440.7
+margin_left = 466.0
+margin_top = 234.0
+margin_right = 963.0
+margin_bottom = 338.0
+theme = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -57,6 +57,7 @@ func _process(delta):
 				player.sleep_all = true
 				player.show_anim("mc_jump")
 				van.play("broke")
+				van.get_node("BreakGlass").play()
 			else:
 				van.transform.origin.x += delta * 800
 				$Camera.transform.origin = van.transform.origin

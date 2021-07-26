@@ -45,7 +45,10 @@ var throw_time = 0
 var throw_charge_meter = preload("res://charge_level.tscn").instance()
 var throw_charge_meter_target_y = 120
 
+var rand
 func _ready():
+	rand = RandomNumberGenerator.new()
+	rand.randomize()
 	get_tree().get_nodes_in_group("camera")[0].add_child(throw_charge_meter)
 	throw_charge_meter.rect_position = Vector2(-64, 150)
 	throw_charge_meter_target_y = 150
@@ -146,6 +149,14 @@ func encumberment_dampener(jump):
 	return 1 - (len(gold) / max_gold_weight)
 
 func _process(delta):
+	
+	# remove all gold that was picked up by other processes
+	var new_golds = []
+	for g in gold:
+		if g.get_parent():
+			new_golds.append(g)
+	gold = new_golds
+	
 	if sleep_all:
 		return
 
@@ -175,8 +186,15 @@ func _process(delta):
 		motion["velocity"].x = clamp(motion["velocity"].x + (motion["speed"] * lr_move), 
 			-motion["max_speed"],
 			motion["max_speed"]) * encumberment_dampener(false)
+		
+	if lr_move != 0 and is_on_floor():
+		if !$FootstepsSound.playing:
+			$FootstepsSound.play()
+	else:
+		$FootstepsSound.stop()
 
 	if is_on_floor() and Input.is_action_pressed("jump") and !jump["active"]:
+		$JumpSound.play()
 		jump["active"] = true
 		motion["velocity"].y -= jump["current"] * encumberment_dampener(true)
 
@@ -201,6 +219,7 @@ func _process(delta):
 				b.apply_central_impulse((b.global_transform.origin - global_transform.origin).normalized() * 14_000)
 				break
 			if b.is_in_group("gold"):
+				$PickupSound.play()
 				b.set_target($goldanchor)
 				b.disable_collisions_for(self)
 				gold.push_back(b)
@@ -220,6 +239,9 @@ func _process(delta):
 	
 	if throw_state == PRESS_STATES.END and thrown != null:
 		# clear all physics on the gold bar
+		
+		[$throw_1, $throw_2, $throw_3][rand.randi_range(0, 2)].play()
+		
 		thrown.set_target()
 		thrown.set_linear_velocity(Vector2(0, 0))
 		thrown.set_angular_velocity(0)
@@ -255,6 +277,7 @@ func _process(delta):
 			
 		if collision.collider.is_in_group("crate"):
 			collision.collider.apply_central_impulse(-collision.normal * 1200)
+
 
 func moving():
 	var velo = motion["velocity"]

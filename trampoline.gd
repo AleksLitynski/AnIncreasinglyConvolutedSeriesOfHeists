@@ -9,6 +9,7 @@ func _on_Area2D_body_entered(body):
 	
 	$AnimatedSprite.frame = 0
 	$AnimatedSprite.play("default")
+	$SproingSound.play()
 	
 	if body.is_in_group("mc"):
 		body.motion["velocity"].y = -500

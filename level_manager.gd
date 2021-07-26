@@ -1,7 +1,10 @@
 extends Node2D
 
 # Called when the node enters the scene tree for the first time.
+var rand
 func _ready():
+	rand = RandomNumberGenerator.new()
+	rand.randomize()
 	# load_level("main_menu", false)
 	load_level("level_2", false)
 
@@ -76,6 +79,7 @@ func _process(delta):
 			if lose_wait > 0:
 				lose_wait -= delta
 			else:
+				$PrisonBarsSound.stop()
 				load_level("game_over", false)
 
 
@@ -99,7 +103,7 @@ func start_level():
 	stats = {
 		"gold": 0,
 		"max_gold": len(get_tree().get_nodes_in_group("gold")),
-		"time": 60
+		"time": 1
 	}
 	
 func calc_final_stats():
@@ -111,6 +115,8 @@ var lose_state = null
 var bars = null
 var lose_wait = 1.5
 func lose_level():
+	$PrisonBarsSound.play()
+	[$LoseSound_1, $LoseSound_2, $LoseSound_3][rand.randi_range(0, 2)].play()
 	bars = preload("res://bars.tscn").instance()
 	bars.scale = Vector2(0.5, 0.5)
 	get_tree() \
@@ -129,6 +135,7 @@ func lose_level():
 
 func win_level():
 	if lose_state == null:
+		$WinSound.play()
 		levels_won += 1
 		current_level.win_level()
 		stats = null

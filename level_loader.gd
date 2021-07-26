@@ -2,7 +2,8 @@ extends Node2D
 
 func _ready():
 	$Button.connect("pressed", self, "pressed")
-	$Score.bbcode_text = "Levels Completed: [u]" + str(get_tree().get_nodes_in_group("main")[0].levels_won) + "[/u]"
+	$Score.bbcode_text = "Heists Completed: [u]" + str(get_tree().get_nodes_in_group("main")[0].levels_won) + "[/u]"
+	$Score.bbcode_text += "Total Gold Stolen: [u]" + str(get_tree().get_nodes_in_group("main")[0].total_gold_stolen) + "[/u]"
 
 var state = "enter" # enter, exit
 var level = null

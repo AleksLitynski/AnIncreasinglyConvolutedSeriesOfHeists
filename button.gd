@@ -15,6 +15,7 @@ func _ready():
 	$Timer.connect("timeout", self, "timeout_done")
 
 func setState(pressed):
+	$AudioStreamPlayer2D.play()
 	if pressed:
 		$green.frame = 0
 		$blue.frame = 0

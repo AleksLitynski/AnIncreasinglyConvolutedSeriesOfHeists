@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://sprites/button_unpressed_red.png" type="Texture" id=1]
 [ext_resource path="res://sprites/button_pressed_red.png" type="Texture" id=2]
@@ -7,11 +7,12 @@
 [ext_resource path="res://sprites/button_pressed_blue.png" type="Texture" id=5]
 [ext_resource path="res://sprites/button_unpressed_blue.png" type="Texture" id=6]
 [ext_resource path="res://button.gd" type="Script" id=7]
+[ext_resource path="res://sounds/button.wav" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 14.7318 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
@@ -19,7 +20,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
 "loop": true,
@@ -42,12 +43,12 @@ script = ExtResource( 7 )
 shape = SubResource( 1 )
 
 [node name="green" type="AnimatedSprite" parent="."]
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 frame = 1
 
 [node name="red" type="AnimatedSprite" parent="."]
 visible = false
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 frame = 1
 
 [node name="blue" type="AnimatedSprite" parent="."]
@@ -56,6 +57,9 @@ frames = SubResource( 4 )
 frame = 1
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
 
 [connection signal="body_entered" from="." to="." method="_on_button_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_button_body_exited"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gold_deposit.wav-8ed308b57fe4524d7b61e4b2252672aa.sample"
+
+[deps]
+
+source_file="res://sounds/gold_deposit.wav"
+dest_files=[ "res://.import/gold_deposit.wav-8ed308b57fe4524d7b61e4b2252672aa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

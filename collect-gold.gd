@@ -18,6 +18,7 @@ func _on_Area2D_body_entered(body):
 			rand_range(center.y - widHei.y, center.y + widHei.y))
 		c_instance.z_index = 100
 		c_instance.playing = true
+		$"../CollectGold".play()
 
 		body.fade_out(c_instance.global_transform.origin)
 		var stats = get_tree().get_nodes_in_group("main")[0].add_gold()

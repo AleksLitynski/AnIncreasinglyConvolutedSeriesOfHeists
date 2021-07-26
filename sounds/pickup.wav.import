@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Boing-sound.wav-93ecfa756cc79cc8bc14f11667434b9c.sample"
+path="res://.import/pickup.wav-474f1e6e10d6e89a37f44ac036a26294.sample"
 
 [deps]
 
-source_file="res://sounds/Boing-sound.wav"
-dest_files=[ "res://.import/Boing-sound.wav-93ecfa756cc79cc8bc14f11667434b9c.sample" ]
+source_file="res://sounds/pickup.wav"
+dest_files=[ "res://.import/pickup.wav-474f1e6e10d6e89a37f44ac036a26294.sample" ]
 
 [params]
 

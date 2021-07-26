@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Fail-trombone.wav-8c7e3589344110bf1b55baae2c45a4d1.sample"
+path="res://.import/throw_1.wav-8af45533628e0611ef99378089770b5d.sample"
 
 [deps]
 
-source_file="res://sounds/Fail-trombone.wav"
-dest_files=[ "res://.import/Fail-trombone.wav-8c7e3589344110bf1b55baae2c45a4d1.sample" ]
+source_file="res://sounds/throw_1.wav"
+dest_files=[ "res://.import/throw_1.wav-8af45533628e0611ef99378089770b5d.sample" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/throw.wav-8ec47c956ddc58f0523553b8894fa74a.sample"
+path="res://.import/prison_bars.wav-d559b90f6da9bb03e9f4fc1c715b45bc.sample"
 
 [deps]
 
-source_file="res://sounds/throw.wav"
-dest_files=[ "res://.import/throw.wav-8ec47c956ddc58f0523553b8894fa74a.sample" ]
+source_file="res://sounds/prison_bars.wav"
+dest_files=[ "res://.import/prison_bars.wav-d559b90f6da9bb03e9f4fc1c715b45bc.sample" ]
 
 [params]
 
