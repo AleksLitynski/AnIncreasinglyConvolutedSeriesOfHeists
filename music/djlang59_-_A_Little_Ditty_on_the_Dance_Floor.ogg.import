@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/djlang59_-_A_Little_Ditty_on_the_Dance_Floor.ogg-41c71d3ab3517cd2523208266e80dd6a.oggstr"
+
+[deps]
+
+source_file="res://music/djlang59_-_A_Little_Ditty_on_the_Dance_Floor.ogg"
+dest_files=[ "res://.import/djlang59_-_A_Little_Ditty_on_the_Dance_Floor.ogg-41c71d3ab3517cd2523208266e80dd6a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

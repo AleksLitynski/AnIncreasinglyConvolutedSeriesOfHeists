@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Super Monkey Ball 2 OST - World 8 - Clock Tower.ogg-6bf4a9ad157a878d776ebf7aa8b14262.oggstr"
+
+[deps]
+
+source_file="res://music/Super Monkey Ball 2 OST - World 8 - Clock Tower.ogg"
+dest_files=[ "res://.import/Super Monkey Ball 2 OST - World 8 - Clock Tower.ogg-6bf4a9ad157a878d776ebf7aa8b14262.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
