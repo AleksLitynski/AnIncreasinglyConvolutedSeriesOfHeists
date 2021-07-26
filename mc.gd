@@ -198,6 +198,9 @@ func _process(delta):
 	if grab_state == PRESS_STATES.START:
 		var bodies = $grabbox.get_overlapping_bodies()
 		for b in bodies:
+			if b.is_in_group("crate"):
+				b.apply_central_impulse((b.global_transform.origin - global_transform.origin).normalized() * 14_000)
+				break
 			if b.is_in_group("gold"):
 				b.set_target($goldanchor)
 				b.disable_collisions_for(self)
@@ -259,6 +262,9 @@ func _process(delta):
 		var collision = get_slide_collision(index)
 		if collision.collider.is_in_group("gold"):
 			collision.collider.apply_central_impulse(-collision.normal * 600)
+			
+		if collision.collider.is_in_group("crate"):
+			collision.collider.apply_central_impulse(-collision.normal * 1200)
 
 
 func moving():

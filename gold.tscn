@@ -4,12 +4,11 @@
 [ext_resource path="res://sprites/goldbar3.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.8252, 6.75156 )
+extents = Vector2( 7.8252, 5.64024 )
 
 [node name="gold" type="RigidBody2D" groups=[
 "gold",
 ]]
-position = Vector2( 152, -152 )
 mass = 100.0
 gravity_scale = 10.0
 continuous_cd = 2
@@ -18,7 +17,7 @@ script = ExtResource( 1 )
 
 [node name="goldbar" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-offset = Vector2( -1, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.117989, 0.353958 )
 shape = SubResource( 1 )

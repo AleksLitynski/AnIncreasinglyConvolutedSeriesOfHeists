@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/crate_small.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.8252, 8 )
+
+[node name="crate" type="RigidBody2D" groups=[
+"crate",
+]]
+mass = 50.0
+gravity_scale = 8.0
+continuous_cd = 2
+angular_damp = 10.0
+
+[node name="image" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

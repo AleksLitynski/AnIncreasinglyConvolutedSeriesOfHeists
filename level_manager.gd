@@ -92,7 +92,6 @@ func add_gold():
 	if stats:
 		stats["gold"] += 1
 		total_gold_stolen += 1
-		print('add gold parent')
 		if current_level.has_method("add_gold"):
 			current_level.add_gold()
 

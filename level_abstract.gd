@@ -80,7 +80,7 @@ func _process(delta):
 		"playing":
 			$Camera.transform.origin = player.transform.origin
 		"win_jump_car":
-			if (player.transform.origin - $end.transform.origin).length() < 2:
+			if (player.transform.origin - $end.transform.origin).length() < 6:
 				state = "win_drive_out"
 				player.get_parent().remove_child(player)
 			else:
@@ -110,7 +110,6 @@ func win_level():
 	state = "win_jump_car"
 
 func add_gold():
-	print("add gold")
 	for gold in golds.get_children():
 		if gold.texture == gold_bw:
 			gold.texture = gold_color
