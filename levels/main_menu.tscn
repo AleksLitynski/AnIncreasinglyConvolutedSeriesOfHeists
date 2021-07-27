@@ -61,7 +61,6 @@ __meta__ = {
 [node name="Car" parent="." instance=ExtResource( 3 )]
 position = Vector2( -160, 200 )
 scale = Vector2( 1.375, 1.375 )
-frame = 0
 script = ExtResource( 5 )
 
 [connection signal="mouse_entered" from="play" to="." method="_on_play_mouse_entered"]
