@@ -292,6 +292,9 @@ func moving():
 	return velo.x > 0.1 or velo.x < -0.1 or velo.y > 0.1 or velo.y < -0.1
 
 func _input(ev):
+	if ev.is_action_pressed("restart"):
+		var main = get_tree().get_nodes_in_group("main")[0]
+		main.load_level(main.current_level.level_id, false)
 	
 	if ev.is_action_pressed("down"):
 		for shelf in get_tree().get_nodes_in_group("shelf"):
